@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建对象</title>
+</head>
+<body>
+	<script>
+		// 对象字面量的方式
+		person1={firstname:"Mike",lastname:"Liu",age:20,eyecolor:"black"};
+
+		// 用function来模拟无参的构造函数
+		function Person() {};
+		var person=new Person();//定义一个function，如果使用new"实例化",该function可以看作是一个Class
+		person.name="Mark"
+		person.age="25"
+		person.work=function() {
+			alert(person.name+" nihao!...");
+		}
+		person.work();
+
+		// function来模拟参构造函数来实现（用this关键字定义构造的上下文属性）
+		function pet(name, age, hobby) {
+			this.name=name;
+			this.age=age;
+			this.hobby=hobby;
+			this.work=function() {
+				alert(this.name+" is "+this.age+" like "+this.hobby);
+			}
+		}
+		var test = new pet("刘康龙", 20, "gym");
+		test.work();
+
+		// 用工厂方式来创建（内置对象）
+		var wcDog = new Object();
+		wcDog.name="旺财";
+	    wcDog.age=3;
+	    wcDog.work=function(){
+	    	alert("我是"+wcDog.name+",汪汪汪......");
+	    }
+		wcDog.work();
+
+		// 用原型方式来创建
+
+	    function Dog(){}
+		Dog.prototype.name="旺财";
+		Dog.prototype.eat=function() {
+			alert(this.name+"是个吃货");
+		}
+		var wangcai =new Dog();
+		wangcai.eat();
+
+		// 用混合方式来创建
+		function Car (name, price) {
+			this.name=name;
+			this.price=price;
+		}
+		Car.prototype.sell = function() {
+			alert("我是"+this.name+"，我现在卖"+this.price+"万元");
+		};
+		var camry=new Car("凯美瑞", 27);
+		camry.sell();
+	</script>
+</body>
+</html>

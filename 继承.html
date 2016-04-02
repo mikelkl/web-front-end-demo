@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript继承</title>
+</head>
+<body>
+	<script>
+	function Parent() {
+		this.name='wang';
+	}
+	function Child() {
+		this.age=28;
+	}
+	Child.prototype=new Parent();
+
+	var demo=new Child();
+	alert(demo.age);
+	alert(demo.name);
+	</script>
+</body>
+</html>

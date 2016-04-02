@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array类型</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// 创建数组的两种方式
+	var colors=new Array();
+	var names=[];
+
+	// 检测数组
+	if (Array.isArray(colors)) {
+		console.log('colors is an Array');
+	}
+
+	// 栈方法
+	var count=colors.push("black");
+	alert(count);
+
+	var item=colors.pop();
+	alert(item);
+
+	var count = colors.push("red", "green"); //推入两项
+	alert(count); //2
+
+	var item = colors.shift();
+	alert(item);
+
+	var count=colors.unshift("red", "green");
+	alert(count);
+	
+
+
+</script>
+</body>
+</html>

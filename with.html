@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>with语句</title>
+</head>
+<body>
+	<script>
+		function buildUrl() {
+			var qs="?debug=true";
+
+			// ]with 语句接收location 对象，因此其变量对象中就包含了location 对象的所有属性和方法，而这个变量对象被添加到了作用域链的前端
+			with(location) {
+				var url=href+qs;
+			}
+
+			return url;
+		}
+
+		console.log(buildUrl());
+	</script>
+</body>
+</html>

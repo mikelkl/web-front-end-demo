@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>归并排序</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function merge(left,right){
+			var result=[];
+			while(left.length>0 && right.length>0){
+				if(left[0]<right[0]){
+					result.push(left.shift());
+				} else{
+					result.push(right.shift());
+				}
+			}
+			return result.concat(left).concat(right);
+		}
+
+		function mergeSort(items){
+			if(items.length == 1){
+				return items;
+			}
+			var middle=Math.floor(items.length/2),
+			left=items.slice(0,middle),
+			right=items.slice(middle);
+			return merge(mergeSort(left),mergeSort(right));
+		}
+
+		// 生成10个0到100的随机数
+		var items=[];
+		for(var i=0;i<9;i++){
+			items[i]=Math.floor(Math.random()*99+1);
+		}
+		
+		console.log(mergeSort(items));
+	</script>
+</body>
+</html>

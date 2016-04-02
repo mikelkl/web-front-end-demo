@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数据类型</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var message="some string";
+	alert(typeof message); // "string"
+	alert(typeof 95); // "number"
+	var message1;
+
+	// 下面这个变量并没有声明
+	// var age
+	alert(message1); //"undefined"
+	alert(typeof age); //"undefined"
+
+	var car=null;
+	alert(typeof car); //"object"
+
+	//isNaN函数
+	alert(isNaN(NaN)); //true
+	alert(isNaN(10)); //false
+
+	// Number函数
+	var num1 = Number("Hello world!"); //NaN
+	var num2 = Number(""); //0
+
+	// parseInt函数
+	var num1 = parseInt("1234blue"); // 1234
+	var num2 = parseInt(""); // NaN
+	var num3 = parseInt("0xA"); // 10（十六进制数）
+	var num4 = parseInt(22.5); // 22
+	var num5 = parseInt("070"); // 56（八进制数）
+	var num6 = parseInt("70"); // 70（十进制数）
+	var num7 = parseInt("0xf"); // 15（十六进制数）
+
+	// parseFloat函数
+	var num1 = parseFloat("1234blue"); //1234 （整数）
+	var num2 = parseFloat("0xA"); //0
+	var num3 = parseFloat("22.5"); //22.5
+	var num4 = parseFloat("22.34.5"); //22.34
+	var num5 = parseFloat("0908.5"); //908.5
+	var num6 = parseFloat("3.125e7"); //31250000
+
+	// 转换为字符串
+	var age=11;
+	age.toString(); // 字符串“11”
+
+	// 理解arguments对象（参数数组）
+	function howManyArgs() {
+		alert(arguments.length);
+	}
+	howManyArgs("string", 45); //2
+	howManyArgs(); //0
+	howManyArgs(12); //1
+</script>
+</body>
+</html>

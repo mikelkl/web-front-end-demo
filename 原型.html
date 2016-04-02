@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型</title>
+</head>
+<body>
+	<script>
+		// 当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性， 如果没有的话，就会查找他的Prototype对象是否有这个属性，如此递推下去，一直检索到 Object 内建对象。
+		function Func() {}
+		Func.prototype.name = "Sean";
+		Func.prototype.getInfo = function() {
+			return this.name;
+		};
+		var person=new Func();
+		console.log(person.getInfo());//它拥有了Func的属性和方法
+		console.log(Func.prototype);
+	</script>
+</body>
+</html>

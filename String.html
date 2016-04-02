@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>String类型</title>
+</head>
+<body>
+	<!-- 字符方法 -->
+	<script>
+		console.info('字符方法');
+		var stringValue="hello world";
+
+		// charAt()方法以单字符字符串的形式返回给定位置的那个字符（ECMAScript 中没有字符类型）
+		console.log(stringValue.charAt(1)); //"e"
+
+		// charCodeAt()得到字符编码
+		console.log(stringValue.charCodeAt(1)); //输出"101"
+
+		console.log(stringValue[1]); //"e"
+	</script>
+
+	<!-- 字符串操作方法 -->
+	<script>
+		console.info('concat()');
+		// concat()用于将一或多个字符串拼接起来，返回拼接得到的新字符串。
+		var stringValue = "hello ";
+		var result = stringValue.concat("world");
+		console.log(result); //"hello world"
+		console.log(stringValue); //"hello"
+
+		// 实际上，concat()方法可以接受任意多个参数，也就是说可以通过它拼接任意多个字符串。
+		var stringValue = "hello ";
+		var result = stringValue.concat("world", "!");
+		console.log(result); //"hello world!"
+		console.log(stringValue); //"hello"
+
+		// slice()、substr()和substring()
+		console.info('slice()、substr()和substring()');
+		var stringValue = "hello world";
+		console.log(stringValue.slice(3)); //"lo world"
+		console.log(stringValue.substring(3)); //"lo world"
+		console.log(stringValue.substr(3)); //"lo world"
+		console.log(stringValue.slice(3, 7)); //"lo w"
+		console.log(stringValue.substring(3,7)); //"lo w"
+		console.log(stringValue.substr(3, 7)); //"lo worl"
+
+		// 在传递给这些方法的参数是负值的情况下，它们的行为就不尽相同了。其中，slice()方法会将传入的负值与字符串的长度相加，substr()方法将负的第一个参数加上字符串的长度，而将负的第二个参数转换为0。最后，substring()方法会把所有负值参数都转换为0
+		console.info('传递给这些方法的参数是负值');
+		var stringValue = "hello world";
+		console.log(stringValue.slice(-3)); //"rld"
+		console.log(stringValue.substring(-3)); //"hello world"
+		console.log(stringValue.substr(-3)); //"rld"
+		console.log(stringValue.slice(3, -4)); //"lo w"
+		console.log(stringValue.substring(3, -4)); //"hel"
+		console.log(stringValue.substr(3, -4)); //""（空字符串）
+	</script>
+
+	<!-- 字符串位置方法 -->
+	<script>
+
+		// indexOf()方法从字符串的开头向后搜索子字符串，而lastIndexOf()方法是从字符串的末尾向前搜索子字符串。
+		var stringValue = "hello world";
+		console.info('indexOf()和lastIndexOf()');
+		console.log(stringValue.indexOf("o")); //4
+		console.log(stringValue.lastIndexOf("o")); //7
+
+		// 这两个方法都可以接收可选的第二个参数，表示从字符串中的哪个位置开始搜索。换句话说，indexOf()会从该参数指定的位置向后搜索，忽略该位置之前的所有字符；而lastIndexOf()则会从指定的位置向前搜索，忽略该位置之后的所有字符。
+		console.info('第二个参数');
+		var stringValue = "hello world";
+		console.log(stringValue.indexOf("o", 6)); //7
+		console.log(stringValue.lastIndexOf("o", 6)); //4
+
+		// 循环调用indexOf()或lastIndexOf()来找到所有匹配的子字符串
+		console.info('通过循环来找到所有匹配的子字符串');
+		var stringValue = "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
+		var positions = new Array();
+		var pos = stringValue.indexOf("e");
+		while(pos > -1){
+			positions.push(pos);
+			pos = stringValue.indexOf("e", pos + 1);
+		}
+		console.log(positions); //"3,24,32,35,52"
+	</script>
+
+	<!-- trim()方法 -->
+	<script>
+		// ECMAScript 5 为所有字符串定义了trim()方法。这个方法会创建一个字符串的副本，删除前置及后缀的所有空格，然后返回结果。
+		console.info('trim()方法');
+		var stringValue = " hello world ";
+		var trimmedStringValue = stringValue.trim();
+		console.log(stringValue); //" hello world "
+		console.log(trimmedStringValue); //"hello world"
+	</script>
+</body>
+</html>
