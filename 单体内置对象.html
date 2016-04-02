@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单体内置对象</title>
+</head>
+<body>
+	<!-- Global对象 -->
+
+	<!-- URI 编码方法 -->
+	<script>
+		/*
+		 * Global 对象的encodeURI()和encodeURIComponent()方法可以对URI（Uniform ResourceIdentifiers，通用资源标识符）进行编码，以便发送给浏览器。有效的URI 中不能包含某些字符，例如空格。而这两个URI 编码方法就可以对URI 进行编码，它们用特殊的UTF-8 编码替换所有无效的字符，从而让浏览器能够接受和理解。
+		 * 其中，encodeURI()主要用于整个URI（例如，http://www.wrox.com/illegal value.htm），而encode-URIComponent()主要用于对URI 中的某一段（例如前面URI 中的illegal value.htm）进行编码。它们的主要区别在于，encodeURI()不会对本身属于URI的特殊字符进行编码，例如冒号、正斜杠、问号和井字号；而encodeURIComponent()则会对它发现的任何非标准字符进行编码。
+		 */
+		console.info('encodeURI()和encodeURIComponent()');
+		var uri = "http://www.wrox.com/illegal value.htm#start";
+		//"http://www.wrox.com/illegal%20value.htm#start"
+		console.log(encodeURI(uri));
+		//"http%3A%2F%2Fwww.wrox.com%2Fillegal%20value.htm%23start"
+		console.log(encodeURIComponent(uri));
+
+		// 与encodeURI()和encodeURIComponent()方法对应的两个方法分别是decodeURI()和decodeURIComponent()。其中，decodeURI()只能对使用encodeURI()替换的字符进行解码。例如，它可将%20 替换成一个空格，但不会对%23 作任何处理，因为%23 表示井字号（#），而井字号不是使用encodeURI()替换的。同样地，decodeURIComponent()能够解码使用encodeURIComponent()编码的所有字符，即它可以解码任何特殊字符的编码。
+		console.info('decodeURI()和decodeURIComponent()');
+		var uri = "http%3A%2F%2Fwww.wrox.com%2Fillegal%20value.htm%23start";
+		//http%3A%2F%2Fwww.wrox.com%2Fillegal value.htm%23start
+		console.log(decodeURI(uri));
+		//http://www.wrox.com/illegal value.htm#start
+		console.log(decodeURIComponent(uri));
+	</script>
+
+	<!-- eval()方法 -->
+	<script>
+		// 。eval()方法就像是一个完整的ECMAScript 解析器，它只接受一个参数，即要执行的ECMAScript （或JavaScript）字符串。
+		console.info('eval()');
+		eval("console.log('hi')");
+	</script>
+
+	<!-- Math对象 -->
+
+	<!-- 舍入方法 -->
+	<script>
+		/*
+		 * 下面来介绍将小数值舍入为整数的几个方法：Math.ceil()、Math.floor()和Math.round()。 
+		 * Math.ceil()执行向上舍入，即它总是将数值向上舍入为最接近的整数；
+		 * Math.floor()执行向下舍入，即它总是将数值向下舍入为最接近的整数；
+		 * Math.round()执行标准舍入，即它总是将数值四舍五入为最接近的整数（这也是我们在数学课上学到的舍入规则）。
+		 */
+		console.info('舍入方法');
+		console.log(Math.ceil(25.9)); //26
+		console.log(Math.ceil(25.5)); //26
+		console.log(Math.ceil(25.1)); //26
+		console.log(Math.round(25.9)); //26
+		console.log(Math.round(25.5)); //26
+		console.log(Math.round(25.1)); //25
+		console.log(Math.floor(25.9)); //25
+		console.log(Math.floor(25.5)); //25
+		console.log(Math.floor(25.1)); //25
+	</script>
+
+	<!-- random()方法 -->
+	<script>
+		/*
+		 * Math.random()方法返回大于等于0 小于1 的一个随机数
+		 *值 = Math.floor(Math.random() * 可能值的总数 + 第一个可能的值)
+		 */
+		console.info('random()方法')
+		function selectFrom(lowerValue, upperValue) {
+			var choices = upperValue - lowerValue + 1;
+			return Math.floor(Math.random() * choices + lowerValue);
+		}
+		var num = selectFrom(2, 10);
+		console.log(num); // 介于 2 和10 之间（包括 2 和 10）的一个数值
+	</script>
+</body>
+</html>
