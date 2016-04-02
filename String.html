@@ -91,5 +91,73 @@
 		console.log(stringValue); //" hello world "
 		console.log(trimmedStringValue); //"hello world"
 	</script>
+
+	<!-- 字符串大小写转换方法 -->
+	<script>
+		// toLocaleLowerCase()和toLocaleUpperCase()方法则是针对特定地区的实现
+		console.info('字符串大小写转换方法');
+		var stringValue = " hello world ";
+		console.log(stringValue.toLocaleUpperCase()); //"HELLO WORLD"
+		console.log(stringValue.toUpperCase()); //"HELLO WORLD"
+		console.log(stringValue.toLocaleLowerCase()); //"hello world"
+		console.log(stringValue.toLowerCase()); //"hello world"
+	</script>
+
+	<!-- 字符串的模式匹配方法 -->
+	<script>
+		// match()，在字符串上调用这个方法，本质上与调用RegExp 的exec()方法相同。match()方法只接受一个参数，要么是一个正则表达式，要么是一个RegExp 对象
+		console.info('match()');
+		var text = "cat, bat, sat, fat";
+		var pattern = /.at/;
+		//与pattern.exec(text)相同
+		var matches = text.match(pattern);
+		console.log(matches.index); //0
+		console.log(matches[0]); //"cat"
+		console.log(pattern.lastIndex); //0
+
+		// 另一个用于查找模式的方法是search()。这个方法的唯一参数与match()方法的参数相同：由字符串或RegExp 对象指定的一个正则表达式。search()方法返回字符串中第一个匹配项的索引；如果没有找到匹配项，则返回-1。而且，search()方法始终是从字符串开头向后查找模式
+		console.info('search()');
+		var text = "cat, bat, sat, fat";
+		var pos = text.search(/at/);
+		console.log(pos); //1
+
+		// 为了简化替换子字符串的操作，ECMAScript 提供了replace()方法。这个方法接受两个参数：第一个参数可以是一个RegExp 对象或者一个字符串（这个字符串不会被转换成正则表达式），第二个参数可以是一个字符串或者一个函数。如果第一个参数是字符串，那么只会替换第一个子字符串。要想替换所有子字符串，唯一的办法就是提供一个正则表达式，而且要指定全局（g）标志
+		console.info('replace()');
+		var text = "cat, bat, sat, fat";
+		var result = text.replace("at", "ond");
+		console.log(result); //"cond, bat, sat, fat"
+		result = text.replace(/at/g, "ond");
+		console.log(result); //"cond, bond, sond, fond"
+
+		// 最后一个与模式匹配有关的方法是split()，这个方法可以基于指定的分隔符将一个字符串分割成多个子字符串，并将结果放在一个数组中。分隔符可以是字符串，也可以是一个RegExp 对象（这个方法不会将字符串看成正则表达式）。split()方法可以接受可选的第二个参数，用于指定数组的大小，以便确保返回的数组不会超过既定大小
+		console.info('replace()');
+		var colorText = "red,blue,green,yellow";
+		console.log(colorText.split(",")); //["red", "blue", "green", "yellow"]
+		console.log(colorText.split(",", 2)); //["red", "blue"]
+		console.log(colorText.split(/[^\,]+/)); //["", ",", ",", ",", ""]
+	</script>
+
+	<!-- localeCompare()方法 -->
+	<script>
+		/*
+		 * 与操作字符串有关的最后一个方法是localeCompare()，这个方法比较两个字符串，并返回下列
+		值中的一个：
+		 * 如果字符串在字母表中应该排在字符串参数之前，则返回一个负数（大多数情况下是-1，具体的值要视实现而定）；
+		 * 如果字符串等于字符串参数，则返回0；
+		 * 如果字符串在字母表中应该排在字符串参数之后，则返回一个正数（大多数情况下是1，具体的值同样要视实现而定）。
+		 */
+		console.info('localeCompare()方法');
+		var stringValue = "yellow";
+		console.log(stringValue.localeCompare("brick")); //1
+		console.log(stringValue.localeCompare("yellow")); //0
+		console.log(stringValue.localeCompare("zoo")); //-1
+	</script>
+
+	<!-- fromCharCode()方法 -->
+	<script>
+		// 另外，String 构造函数本身还有一个静态方法：fromCharCode()。这个方法的任务是接收一或多个字符编码，然后将它们转换成一个字符串。从本质上来看，这个方法与实例方法charCodeAt()执行的是相反的操作。
+		console.info('fromCharCode()')
+		console.log(String.fromCharCode(104, 101, 108, 108, 111)); //"hello"
+	</script>
 </body>
 </html>
