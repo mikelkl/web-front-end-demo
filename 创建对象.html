@@ -1,65 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>创建对象</title>
+    <meta charset="UTF-8">
+    <title>创建对象</title>
 </head>
 <body>
-	<script>
-		// 对象字面量的方式
-		person1={firstname:"Mike",lastname:"Liu",age:20,eyecolor:"black"};
 
-		// 用function来模拟无参的构造函数
-		function Person() {};
-		var person=new Person();//定义一个function，如果使用new"实例化",该function可以看作是一个Class
-		person.name="Mark"
-		person.age="25"
-		person.work=function() {
-			alert(person.name+" nihao!...");
-		}
-		person.work();
+<!-- 创建对象 -->
+<script>
+    // 对象字面量的方式
+    person1 = {firstname: "Mike", lastname: "Liu", age: 20, eyecolor: "black"};
 
-		// function来模拟参构造函数来实现（用this关键字定义构造的上下文属性）
-		function pet(name, age, hobby) {
-			this.name=name;
-			this.age=age;
-			this.hobby=hobby;
-			this.work=function() {
-				alert(this.name+" is "+this.age+" like "+this.hobby);
-			}
-		}
-		var test = new pet("刘康龙", 20, "gym");
-		test.work();
+    /*
+     * 工厂模式
+     * 工厂模式是软件工程领域一种广为人知的设计模式，这种模式抽象了创建具体对象的过程（本书后面还将讨论其他设计模式及其在JavaScript中的实现）。考虑到在ECMAScript 中无法创建类，开发人员就发明了一种函数，用函数来封装以特定接口创建对象的细节
+     * 工厂模式虽然解决了创建多个相似对象的问题，但却没有解决对象识别的问题（即怎样知道一个对象的类型）。
+     */
+    console.info('工厂模式');
+    function createPerson(name, age, job) {
+        var o = new Object();
+        o.name = name;
+        o.age = age;
+        o.job = job;
+        o.sayName = function () {
+            console.log(this.name);
+        };
+        return o;
+    }
+    var person1 = createPerson("Nicholas", 29, "Software Engineer");
+    var person2 = createPerson("Greg", 27, "Doctor");
+    person1.sayName();
+    person2.sayName();
 
-		// 用工厂方式来创建（内置对象）
-		var wcDog = new Object();
-		wcDog.name="旺财";
-	    wcDog.age=3;
-	    wcDog.work=function(){
-	    	alert("我是"+wcDog.name+",汪汪汪......");
-	    }
-		wcDog.work();
+    /*
+     * 构造函数模式
+     * 要创建Person 的新实例，必须使用new 操作符
+     */
+    console.info('工厂模式');
+    function Person(name, age, job) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.sayName = function () {
+            console.log(this.name);
+        };
+    }
+    var person1 = new Person("Nicholas", 29, "Software Engineer");
+    var person2 = new Person("Greg", 27, "Doctor");
+    console.log(person1.constructor == Person); //true
 
-		// 用原型方式来创建
+    console.log(person1 instanceof Object); //true
 
-	    function Dog(){}
-		Dog.prototype.name="旺财";
-		Dog.prototype.eat=function() {
-			alert(this.name+"是个吃货");
-		}
-		var wangcai =new Dog();
-		wangcai.eat();
+    console.log(person1 instanceof Person); //true
+    console.log(person2 instanceof Object); //true
+    console.log(person2 instanceof Person); //true
+    /*
+     * 原型模式
+     * 我们创建的每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。如果按照字面意思来理解，那么prototype 就是通过调用构造函数而创建的那个对象实例的原型对象。使用原型对象的好处是可以让所有对象实例共享它所包含的属性和方法。换句话说，不必在构造函数中定义对象实例的信息，而是可以将这些信息直接添加到原型对象中
+     */
 
-		// 用混合方式来创建
-		function Car (name, price) {
-			this.name=name;
-			this.price=price;
-		}
-		Car.prototype.sell = function() {
-			alert("我是"+this.name+"，我现在卖"+this.price+"万元");
+    console.info('原型模式');
+    function Person() {
+    }
+    Person.prototype.name = "Nicholas";
+    Person.prototype.age = 29;
+    Person.prototype.job = "Software Engineer";
+    Person.prototype.sayName = function () {
+        console.log(this.name);
+    };
+    var person1 = new Person();
+    person1.sayName(); //"Nicholas"
+    var person2 = new Person();
+    person2.sayName(); //"Nicholas"
+    /*
+     * 组合使用构造函数模式和原型模式
+     * 创建自定义类型的最常见方式，就是组合使用构造函数模式与原型模式。构造函数模式用于定义实例属性，而原型模式用于定义方法和共享的属性。结果，每个实例都会有自己的一份实例属性的副本，但同时又共享着对方法的引用，最大限度地节省了内存。另外，这种混成模式还支持向构造函数传递参数；可谓是集两种模式之长
+     */
+    console.info('组合使用构造函数模式和原型模式');
+    function Person(name, age, job) {
+        console.log(person1.sayName == person2.sayName); //true
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.friends = ["Shelby", "Court"];
+    }
+    Person.prototype = {
+        constructor: Person,
+        sayName: function () {
+            console.log(this.name);
+        }
+    }
+    var person1 = new Person("Nicholas", 29, "Software Engineer");
+    var person2 = new Person("Greg", 27, "Doctor");
+    person1.friends.push("Van");
+    console.log(person1.friends); //"Shelby,Count,Van"
+    console.log(person2.friends); //"Shelby,Count"
+    console.log(person1.friends === person2.friends); //false
+    console.log(person1.sayName === person2.sayName); //true
+</script>
+
+<script>
+    /*
+    * 动态原型模式
+    * 有其他OO 语言经验的开发人员在看到独立的构造函数和原型时，很可能会感到非常困惑。动态原型模式正是致力于解决这个问题的一个方案，它把所有信息都封装在了构造函数中，而通过在构造函数中初始化原型（仅在必要的情况下），又保持了同时使用构造函数和原型的优点。换句话说，可以通过检查某个应该存在的方法是否有效，来决定是否需要初始化原型
+    */
+    console.info('动态原型模式');
+    function Person(name, age, job){
+        //属性
+        this.name = name;
+        this.age = age;
+        this.job = job;
+
+        //方法
+        if (typeof this.sayName != "function"){
+            Person.prototype.sayName = function(){
+                console.log(this.name);
+            };
+        }
+    }
+    var friend = new Person("Nicholas", 29, "Software Engineer");
+    friend.sayName();
+</script>
+
+<script>
+	/*
+	 * 稳妥构造函数模式
+	 * 所谓稳妥对象，指的是没有公共属性，而且其方法也不引用this 的对象。稳妥对象最适合在一些安全的环境中（这些环境中会禁止使用this new），或者在防止数据被其他应用程序（如Mashup程序）改动时使用。稳妥构造函数遵循与寄生构造函数类似的模式，但有两点不同：一是新创建对象的实例方法不引用this；二是不使用new 操作符调用构造函数
+	 */
+    console.info('稳妥构造函数模式');
+	function Person(name, age, job){
+		//创建要返回的对象
+		var o = new Object();
+		//可以在这里定义私有变量和函数
+
+		//添加方法
+		o.sayName = function(){
+			console.log(name);
 		};
-		var camry=new Car("凯美瑞", 27);
-		camry.sell();
-	</script>
+
+		//返回对象
+		return o;
+	}
+
+	var friend = Person("Nicholas", 29, "Software Engineer");
+	friend.sayName(); //"Nicholas"
+</script>
 </body>
 </html>
