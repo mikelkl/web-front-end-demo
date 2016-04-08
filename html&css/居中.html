@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>居中效果</title>
+	<style>
+	div:first-of-type {
+		width: 200px;
+		margin:0 auto;
+		background: #F25757;
+	}
+	div:nth-of-type(2) {
+		width: 500px;
+		height: 300px;
+		/*设置左外边距为-250px,因为元素width为500px，
+		设置了left为50%即左边距对齐横坐标的中点，所以
+		要将元素向左“拉回”一半的width，即250px*/
+		margin: 150px 0 0 -250px;	
+		position: relative;
+		background-color: pink;
+		left: 50%;
+		top: 50%;
+	}
+	div:last-of-type {
+		position: absolute;
+		width: 200px;
+		background: yellow;
+		margin: 0 auto;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+	</style>
+</head>
+<body>
+	<div>div</div>
+	<div>浮动元素</div>
+	<div>绝对定位</div>
+</body>
+</html>
