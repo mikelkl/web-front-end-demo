@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function draw(id) {
+            var canvas = document.getElementById(id);
+            var context = canvas.getContext("2d");
+
+            // 图形背景的样式，填充颜色值
+            context.fillStyle = '#eeeeef';
+
+            // 绘制圆形
+            context.fillRect(0, 0, 300, 400);
+            var dx = 150;
+            var dy = 150;
+            var s = 100;
+
+            // 开始绘制
+            context.beginPath();
+            context.fillStyle = "rgb(100,255,100)";
+
+            // 图形边框的样式
+            context.strokeStyle = "rgb(0,0,100)";
+            var x = Math.sin(0);
+            var y = Math.cos(0);
+            var dig = Math.PI / 15 * 11;
+            for (var i = 0; i < 30; i++) {
+                var x = Math.sin(i * dig);
+                var y = Math.cos(i * dig);
+
+                //绘制直线
+                context.lineTo(dx + x * s, dy + y * s);
+            }
+            context.closePath();
+
+            /*
+             * The CanvasRenderingContext2D.fill() method of the
+             * Canvas 2D API fills the current or given path with
+             * the current fill style using the non-zero or even-odd
+             * winding rule.
+             * */
+            context.fill();
+            context.stroke();
+        }
+    </script>
+</head>
+<body onload="draw('canvas')">
+<canvas id="canvas" width="300" height="400"></canvas>
+</body>
+</html>

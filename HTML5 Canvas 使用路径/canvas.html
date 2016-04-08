@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function draw(id) {
+            var canvas = document.getElementById(id);
+            if (canvas == null) {
+                return false;
+            }
+            var context = canvas.getContext("2d");
+            context.fillStyle = "#eeeeef";
+            context.fillRect(0, 0, 600, 700);
+            for (var i = 0; i <= 10; i++) {
+                context.beginPath();
+                context.arc(i * 25, i * 25, i * 10, 0, Math.PI * 2, true);
+
+                // 注意关闭路径，否则之前绘制的吐血会被重新绘制
+                context.closePath();
+                context.fillStyle = "rgba(255,0,0,0.25)";
+                context.fill();
+            }
+        }
+    </script>
+</head>
+<body onload="draw('canvas')">
+<canvas id="canvas" width="600px" height="700px"></canvas>
+</body>
+</html>

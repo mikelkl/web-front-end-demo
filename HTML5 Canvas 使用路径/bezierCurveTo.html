@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function draw(id) {
+            var canvas = document.getElementById(id);
+            if (canvas == null) {
+                return false;
+            }
+            var context = canvas.getContext("2d");
+
+            // 图形背景的样式，填充颜色值
+            context.fillStyle = '#eeeeef';
+
+            // 绘制圆形
+            context.fillRect(0, 0, 300, 400);
+            var dx = 150;
+            var dy = 150;
+            var s = 100;
+
+            // 开始绘制
+            context.beginPath();
+            context.fillStyle = "rgb(100,255,100)";
+
+            var x = Math.sin(0);
+            var y = Math.cos(0);
+            var dig = Math.PI / 15 * 11;
+            for (var i = 0; i < 30; i++) {
+                var x = Math.sin(i * dig);
+                var y = Math.cos(i * dig);
+
+                //绘制贝塞尔曲线
+                context.bezierCurveTo(dx + x * s, dy + y * s - 100, dx + x * s + 100, dy + y * s, dx + x * s, dy + y * s);
+            }
+            context.closePath();
+            context.fill();
+            context.stroke();
+        }
+    </script>
+</head>
+<body onload="draw('canvas')">
+<canvas id="canvas" width="300" height="400"></canvas>
+</body>
+</html>
