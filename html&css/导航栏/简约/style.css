@@ -1,0 +1,92 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: url("bg.jpg");
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+
+#header {
+    height: 31px;
+    min-width: 990px;
+    padding: 9px 10px 0 0;
+    position: relative;
+}
+
+#hd_nav {
+    float: right;
+}
+
+ul {
+    list-style: none;
+}
+
+#hd_nav li {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    float: left;
+    height: 14px;
+    padding: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    cursor: auto;
+}
+
+#hd_nav .skin a {
+    padding-left: 22px;
+    position: relative;
+}
+
+#hd_nav a {
+    color: #fff;
+    height: 14px;
+    line-height: 14px;
+}
+
+#hd_nav li .icon {
+    background: url("http://p7.qhimg.com/d/inn/774669ac/t01bc32feb0bbb5c4e0.png") no-repeat;
+    left: 0;
+    position: absolute;
+}
+
+#hd_nav .skin .icon {
+    /*The background-position CSS property sets the initial position,
+    relative to the background position layer defined by background-origin
+     for each defined background image.*/
+    background-position: 0 -270px;
+    height: 15px;
+    top: -1px;
+    width: 16px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.login {
+    padding-left: 41px;
+    position: relative;
+    border: none;
+}
+
+.avatar {
+    border-radius: 18px;
+    box-shadow: 0 1px 5px rgba(87, 87, 87, 0.5);
+    height: 20px;
+    left: 10px;
+    position: absolute;
+    top: -2px;
+    width: 20px;
+}
+
+.a1 {
+    margin-left: 30px;
+}
+
+.a2 {
+    margin-left: 5px;
+}

@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Lantinghei SC", "Microsoft YaHei", 宋体, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+}
+
+li, ul, img, a, div {
+    border: 0;
+    list-style: none;
+}
+
+div {
+    display: block;
+}
+
+a {
+    color: #333333;
+    text-decoration: none;
+    outline: none;
+}
+
+em {
+    font-weight: normal;
+}
+
+.ue-bar {
+    background-color: #222222;
+}
+
+.ue-bar-warp {
+    width: 980px;
+    height: 70px;
+    margin: 0 auto;
+
+    /*The overflow property specifies whether to clip content,
+    render scrollbars or just display content when it overflows
+    its block level container.*/
+    overflow: hidden;
+    position: relative;
+}
+
+.ue-bar-logo {
+    width: 134px;
+    height: 50px;
+    float: left;
+    padding-right: 10px;
+    padding-top: 8px;
+}
+
+.ue-bar-logo a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin-top: 12px;
+}
+
+.ue-bar-nav {
+    height: 70px;
+    float: left;
+}
+
+.ue-bar-nav li {
+    height: 70px;
+    float: left;
+    margin-right: 20px;
+}
+
+.ue-bar-nav li * {
+    color: #dadada;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 17px;
+    vertical-align: top;
+}
+
+.ue-bar-nav li a {
+    height: 22px;
+    line-height: 17px;
+    padding: 26px 17px;
+}
+
+.ue-bar-nav li.active {
+    background: #333333;
+}
+
+/*制作鼠标滑过变灰的效果*/
+.ue-bar-nav li a:hover {
+    background: #333333;
+}

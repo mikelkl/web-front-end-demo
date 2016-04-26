@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "open sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.4em;
+    min-width: 600px;
+}
+
+.adminMenuWarp {
+    position: relative;
+    float: left;
+    width: 160px;
+    background-color: #222;
+}
+
+.adminMenu {
+    clear: left;
+    margin: 12px 0;
+    list-style: none;
+    width: 160px;
+    background-color: #222;
+}
+
+.menu {
+    min-height: 34px;
+    cursor: pointer;
+}
+
+.menu a {
+    padding: 10px 0px;
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+
+    /*The text-indent property specifies the amount of
+    indentation (empty space) should be left before lines
+     of text in a block.*/
+    text-indent: 40px;
+}
+
+a:hover {
+    background-color: #000;
+    color: cyan;
+}
