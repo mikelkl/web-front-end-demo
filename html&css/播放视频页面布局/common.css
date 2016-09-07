@@ -1,0 +1,28 @@
+body p {
+    margin: 0;
+    padding: 0;
+    font-family: "Lantinghei SC", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: #f1f1f1;
+}
+
+a {
+    text-decoration: none;
+}
+
+.cf:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.b {
+    font-weight: bold;
+}
+
+.w-1000 {
+    width: 1000px;
+    margin: 0 auto;
+}
