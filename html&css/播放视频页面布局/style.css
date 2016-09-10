@@ -1,0 +1,29 @@
+.learn-title-nav{
+    /*
+    On block level elements,
+    the line-height property specifies the
+    minimum height of line boxes within the element.
+     */
+    line-height: 64px;
+}
+
+.learn-title-nav a{
+    color: #747474;
+}
+
+.learn-course-banner-ios{
+    background: url("images/learnCourseVideoTop.jpg");
+    height: 100px;
+}
+
+.learn-title-des .learn-tile{
+    font-size: 24px;
+    color: #fff;
+    padding: 13px 0 0 26px;
+}
+
+.learn-title-des .learn-des{
+    font-size: 14px;
+    color: #929191;
+    padding: 6px 26px 0 26px;
+}
