@@ -1,4 +1,4 @@
-.learn-title-nav{
+.learn-title-nav {
     /*
     On block level elements,
     the line-height property specifies the
@@ -7,53 +7,54 @@
     line-height: 64px;
 }
 
-.learn-title-nav a{
+.learn-title-nav a {
     color: #747474;
 }
 
-.learn-course-banner-ios{
+.learn-course-banner-ios {
     background: url("images/learnCourseVideoTop.jpg");
     height: 100px;
 }
 
-.learn-title-des .learn-tile{
+.learn-title-des .learn-tile {
     font-size: 24px;
     color: #fff;
     padding: 13px 0 0 26px;
 }
 
-.learn-title-des .learn-des{
+.learn-title-des .learn-des {
     font-size: 14px;
     color: #929191;
     padding: 6px 26px 0 26px;
 }
 
-.learn-video{
+.learn-video {
     width: 1000px;
     height: 560px;
 }
 
-.learn-video-info{
+.learn-video-info {
     height: 84px;
     background: #101213;
     line-height: 84px;
 }
 
-.learn-video-info .left{
+.learn-video-info .left {
     width: 50%;
     float: left;
 }
 
-.learn-video-info .left p{
+.learn-video-info .left p {
     float: left;
     padding-left: 38px;
     font-size: 14px;
 }
-.learn-video-info .left p a{
+
+.learn-video-info .left p a {
     color: #1abc9c;
 }
 
-.learn-video-info .right{
+.learn-video-info .right {
     float: right;
     height: 84px;
     width: 350px;
@@ -61,7 +62,7 @@
     margin-right: 40px;
 }
 
-.learn-video-info .right .rightnum{
+.learn-video-info .right .rightnum {
     width: 260px;
     height: 40px;
     margin: 0 auto;
@@ -70,7 +71,7 @@
     overflow: hidden;
 }
 
-.learn-video-info .right .rightnum a{
+.learn-video-info .right .rightnum a {
     display: block;
     float: left;
     width: 40px;
@@ -84,10 +85,91 @@
     position: relative;
 }
 
-.learn-video-info .right .rightnum a:hover{
+.learn-video-info .right .rightnum a:hover {
     width: 36px;
     height: 36px;
-    border: 2px solid#29bb9c;
+    border: 2px solid #29bb9c;
     font-size: 14px;
     line-height: 36px;
 }
+
+.video-list {
+    margin-top: 20px;
+}
+
+.video-list .list-left {
+    width: 250px;
+    height: auto;
+    float: left;
+}
+
+.video-list .left {
+    background: #fff;
+    padding: 20px;
+}
+
+.time {
+    font-size: 14px;
+    color: #727272;
+    line-height: 50px;
+}
+
+.video-list .left .title b {
+    color: #19253a;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.video-list .left .content {
+    font-size: 14px;
+    color: #727272;
+    padding-bottom: 20px;
+}
+
+.video-list .left .b {
+    width: 210px;
+    height: 45px;
+    background: #b8b8b8;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    font-weight: 700;
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.video-list .left .b-cource {
+    background: #fc6621;
+}
+
+.video-list .teacher-info{
+    width: 210px;
+    padding: 20px;
+    background: #fff;
+    height: auto;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.video-list .teacher-info .teacher-img{
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    /* Content is clipped, with no scrollbars*/
+    overflow: hidden;
+}
+
+.video-list .teacher-info .teacher-name{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin: 5px auto;
+}
+
+.video-list .teacher-info .teacher-des{
+    font-size: 14px;
+    color: #cecece;
+}
+
+
