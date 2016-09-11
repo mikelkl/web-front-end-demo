@@ -12,7 +12,7 @@
 }
 
 .learn-course-banner-ios {
-    background: url("images/learnCourseVideoTop.jpg");
+    background: url("../images/learnCourseVideoTop.jpg");
     height: 100px;
 }
 
@@ -172,4 +172,78 @@
     color: #cecece;
 }
 
+.video-list .right{
+    width: 666px;
+    float: right;
+    background: #fff;
+    padding: 0 30px;
+}
+
+.video-list .right .list-question{
+    width: 600px;
+    margin: 10px auto;
+}
+
+.video-list .right .list-question span{
+    display: block;
+    width: 200px;
+    cursor: pointer;
+    padding-bottom: 20px;
+    text-align: center;
+    float: left;
+    margin-right: 100px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #727272;
+}
+
+.video-list .right .list-question span.bottomline{
+    border-bottom: 3px solid #23BA98;
+    color: #19253a;
+}
+
+.video-list .right .list-content{
+    margin-top: 20px;
+}
+
+.video-list .right .list-content .lists .question .reply-name-time{
+    margin-top: 10px;
+}
+
+.video-list .right .list-content .lists .question .reply-name-time .reply-name{
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.video-list .right .list-content .lists .question .reply-name-time .reply-time{
+    color: #cecece;
+    font-size: 12px;
+}
+
+.video-list .right .list-content .lists .question .replynum{
+    float: right;
+}
+
+.video-list .right .list-content .lists .question .replynum p{
+    color: #cecece;
+    font-size: 10px;
+}
+
+.video-list .right .list-content .lists .question .replynum .topbottom .replynumtop{
+    color: #3F51B5;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+}
+
+
+
+.video-list .right .list-content .lists .reply-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+}
 
