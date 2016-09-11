@@ -27,3 +27,67 @@
     color: #929191;
     padding: 6px 26px 0 26px;
 }
+
+.learn-video{
+    width: 1000px;
+    height: 560px;
+}
+
+.learn-video-info{
+    height: 84px;
+    background: #101213;
+    line-height: 84px;
+}
+
+.learn-video-info .left{
+    width: 50%;
+    float: left;
+}
+
+.learn-video-info .left p{
+    float: left;
+    padding-left: 38px;
+    font-size: 14px;
+}
+.learn-video-info .left p a{
+    color: #1abc9c;
+}
+
+.learn-video-info .right{
+    float: right;
+    height: 84px;
+    width: 350px;
+    position: relative;
+    margin-right: 40px;
+}
+
+.learn-video-info .right .rightnum{
+    width: 260px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.learn-video-info .right .rightnum a{
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    background: #1d1d1d;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 6px;
+    position: relative;
+}
+
+.learn-video-info .right .rightnum a:hover{
+    width: 36px;
+    height: 36px;
+    border: 2px solid#29bb9c;
+    font-size: 14px;
+    line-height: 36px;
+}
