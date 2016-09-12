@@ -1,0 +1,102 @@
+body, h3, p {
+    margin: 0px;
+    padding: 0px;
+}
+
+h3 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+body {
+    background: #f1f1f1;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*:after 选择器在被选元素的内容后面插入内容。
+使用 content 属性来指定要插入的内容。*/
+.cf:after {
+    content: '';
+    display: block;
+    /*元素不会向下移动清除之前的浮动*/
+    clear: both;
+}
+
+.w-1000 {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.coursecontent .lessonlist {
+    padding: 60px 0px 60px 0px;
+    width: 780px;
+    float: right;
+    border-left: 5px solid #e4e4e4;
+}
+
+.coursecontent .lessonlist .learn-lessonlist {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.coursecontent .lessonlist .learn-lessonlist .stageicon {
+    position: absolute;
+    /*z-index 属性设置元素的堆叠顺序。拥
+    有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。*/
+    z-index: 30;
+    left: -17px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    border: 5px solid #e4e4e4;
+    background: #f1f1f1;
+}
+
+.coursecontent .lessonlist .learn-lessonlist .stagewarning-box {
+    width: 160px;
+    height: 80px;
+    padding: 10px;
+    position: absolute;
+    left: -230px;
+    top: 0px;
+    background: #fff;
+}
+
+.coursecontent .lessonlist .learn-lessonlist .stagewarning-box .jiantou-right {
+    position: absolute;
+    top: 0px;
+    right: -26px;
+    display: block;
+    width: 0;
+    height: 0px;
+    border-width: 10px 13px;
+    border-style: solid;
+    /*均分原理制作三角形，
+    右边框和吓边框与背景同色，等同于不显示，
+    沿对角线只显示左上角的部分*/
+    border-color: #fff #f1f1f1 #f1f1f1 #fff;
+}
+
+.coursecontent .lessonlist .learn-lessonlist .stagewarning-box .textcontent {
+    width: 150px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.coursecontent .lessonlist .textcontent h3 {
+    font-size: 18px;
+    color: #101213;
+    line-height: 30px;
+}
+
+.coursecontent .lessonlist .textcontent p {
+    font-size: 12px;
+    line-height: 22px;
+    color: #707171;
+}
+
+
