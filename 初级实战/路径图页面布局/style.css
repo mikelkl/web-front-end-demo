@@ -157,3 +157,34 @@ a {
 .lessonimgbox .imgboxfoot .minandtime {
     float: right;
 }
+
+.lessonimgbox .img-pop {
+    width: 230px;
+    height: 210px;
+    padding: 10px 0;
+    position: absolute;
+    top: 230px;
+    left: 0px;
+    z-index: 40;
+    background: #fff;
+}
+
+.lessonimgbox .img-pop blockquote p {
+    padding: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    height: 85px;
+    overflow: hidden;
+    color: #8d8d8d;
+}
+
+.lessonimgbox .img-pop .time-user-number {
+    padding: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #8d8d8d;
+}
+
+.lessonimgbox .img-pop .time-user-number span:nth-child(2) {
+    float: right;
+}
