@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+</head>
+<body style="padding: 10px;" ng-app="">
+<div>
+    <input type="text" ng-model="uname">
+    <h1 ng-bind="uname"></h1>
+    <div ng-bind="'用户名：'+uname"></div>
+    <div class="{{uname}}">{{uname}}</div>
+</div>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+</html>

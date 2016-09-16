@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+</head>
+<body style="padding: 10px;" ng-app="app1">
+<div ng-controller="MyCtrl">
+    <input type="text" ng-model="user.uname">
+    <input type="text" ng-model="user.pwd">
+    <!--<h3>{{reverse()}}</h3>-->
+    <div class="btn btn-default" ng-click="login()">登陆</div>
+    <div class="alert alert-danger" role="alert" ng-show="errormsg.length>0">{{errormsg}}</div>
+</div>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script src="js/myCtrl.js"></script>
+</html>
