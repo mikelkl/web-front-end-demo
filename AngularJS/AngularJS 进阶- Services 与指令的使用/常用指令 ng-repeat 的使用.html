@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <style>
+        .selected {
+            color: #3E3E9D;
+        }
+    </style>
+</head>
+<body style="padding: 10px;" ng-app="app3" ng-controller="AddressCtrl">
+<div style="padding: 10px;font-weight: bold;">地址管理</div>
+<ul>
+    <li ng-repeat="item in list" ng-class="{'selected':$first}">
+        <h4>{{$index+1+item.address+$first+' '+$last}}</h4>
+
+    </li>
+</ul>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script src="js/app.js"></script>
+</html>

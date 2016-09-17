@@ -27,7 +27,7 @@ window.onload = function () {
 		var f = e.dataTransfer.files[0];
 		var fileReader = new FileReader();
 		fileReader.onload = function (e) {
-			imgContainer.innerHTML = "<img src=\""+fileReader.result+"\">";
+			imgContainer.innerHTML = "<image src=\"" + fileReader.result + "\">";
 		}
 		fileReader.readAsDataURL(f);
 	}
