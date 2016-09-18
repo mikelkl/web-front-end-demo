@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css">
+</head>
+<body style="padding: 10px;" ng-app="app2">
+<div ng-controller="MyCtrl">
+    <fieldset>
+        <legend>用户角色</legend>
+        <select ng-model="curselect">
+            <option value="">--请选择</option>
+            <option ng-repeat="r in roles" value={{r.id}}>{{r.rolename}}</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>权限列表</legend>
+        <span ng-repeat="right in rights">
+            <input type="checkbox" ng-checked="right.ischecked">&nbsp;{{right.rightname}}
+        </span>
+    </fieldset>
+</div>
+</body>
+<script src="//cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script src="js/app.js"></script>
+</html>
