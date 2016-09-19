@@ -1,8 +1,8 @@
 > *官方文档：https://docs.angularjs.org/guide*  
 > 参考文章：
-1. [angular中的MVVM模式 - 破狼 - 博客园](http://www.cnblogs.com/whitewolf/p/4581254.html)
-1. [ngBind](https://docs.angularjs.org/api/ng/directive/ngBind)
-1. [AngularJS 控制器 | 菜鸟教程](http://www.runoob.com/angularjs/angularjs-controllers.html)
+1. [angular中的MVVM模式 - 破狼 - 博客园](http://www.cnblogs.com/whitewolf/p/4581254.html)  
+1. [ngBind](https://docs.angularjs.org/api/ng/directive/ngBind)  
+1. [AngularJS 控制器 | 菜鸟教程](http://www.runoob.com/angularjs/angularjs-controllers.html)  
 
 ___
 
