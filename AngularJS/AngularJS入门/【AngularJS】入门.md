@@ -22,7 +22,6 @@ AngularJS通过为开发者呈现一个更高层次的抽象来简化应用的�
 2. 模块化
 3. 双向绑定
 4. 语义化标签
-### AngularJS 的优点
 
 ### 第一个AngularJS Web应用
 1. 引入angular.js文件，使用ng-app指令声明AngularJS管理边界
