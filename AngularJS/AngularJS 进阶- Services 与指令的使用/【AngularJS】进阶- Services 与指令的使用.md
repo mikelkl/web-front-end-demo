@@ -1,9 +1,9 @@
-> *官方文档链接：https://docs.angularjs.org/guide/directive*
+> *官方文档链接：https://docs.angularjs.org/guide/services*
 
 ___
 
 ### 自定义Services服务
-https://docs.angularjs.org/guide/services
+官方文档已足够详细
 
 #### AngularJS里的Services表现形式
 
