@@ -1,2 +1,5 @@
-#IDEA
+# IDEA
 .idea
+
+# Grunt
+node_modules
