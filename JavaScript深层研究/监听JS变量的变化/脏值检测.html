@@ -39,12 +39,12 @@
 //                apply();
 //            }
             // 使用闭包才可正确访问下标
-            list[i].onclick = function (index) {
+            list[i].onclick = (function (index) {
                 return function () {
                     window[list[index].getAttribute("ng-click")]();
                     apply();
                 };
-            }(i);// 立即执行函数表达式
+            })(i);// 立即执行函数表达式
         }
     }
 
