@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES5的getter与setter</title>
+</head>
+<body>
+<script>
+    var a = {zhihu: 0};
+
+    Object.defineProperty(a, 'zhihu', {
+        get: function () {
+            console.log('get：' + zhihu);
+            return zhihu;
+        },
+        set: function (value) {
+            zhihu = value;
+            console.log('set:' + zhihu);
+        }
+    });
+
+    a.zhihu = 2; // set:2
+    console.log(a.zhihu); // get：2
+</script>
+</body>
+</html>

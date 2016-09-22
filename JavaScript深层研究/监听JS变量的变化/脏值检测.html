@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>two-way binding</title>
+</head>
+<body onload="init()">
+<button ng-click="inc">Increase</button>
+<button ng-click="reset">Reset</button>
+<span style="color: red" ng-bind="counter"></span>
+<span style="color: blue" ng-bind="counter"></span>
+<span style="color: green" ng-bind="counter"></span>
+
+<script>
+    /*数据模型区开始*/
+    var counter = 0;
+
+    function inc() {
+        counter++;
+    }
+
+    function reset() {
+        counter = 0;
+    }
+    /*数据模型区结束*/
+
+    /*绑定关系区开始*/
+    function init() {
+        bind();
+    }
+
+    function bind() {
+        // 选择带有 ng-click 属性所有元素。
+        var list = document.querySelectorAll("[ng-click]");
+        for (var i = 0; i < list.length; i++) {
+            // 为onclick事件创建一个匿名函数同时调用该函数
+//            list[i].onclick = function () {
+//                window[this.getAttribute("ng-click")]();// this 引用当前元素
+//                apply();
+//            }
+            // 使用闭包才可正确访问下标
+            list[i].onclick = function (index) {
+                return function () {
+                    window[list[index].getAttribute("ng-click")]();
+                    apply();
+                };
+            }(i);// 立即执行函数表达式
+        }
+    }
+
+    function apply() {
+        // 选择带有 ng-bind='counter'所有元素。
+        var list = document.querySelectorAll("[ng-bind='counter']");
+        for (var i = 0; i < list.length; i++) {
+            if (list[i].innerHTML != counter) {
+                list[i].innerHTML = counter;
+            }
+        }
+    }
+    /* 绑定关系区结束 */
+</script>
+</body>
+</html>
