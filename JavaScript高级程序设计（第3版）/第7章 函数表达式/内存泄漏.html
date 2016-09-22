@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内存泄漏</title>
+</head>
+<body>
+<script>
+    function assignHandler() {
+        var element = document.getElementById('someElement');
+        element.onclick = function () {
+            alert(element.id);
+        }
+    }
+</script>
+<!--以上代码创建了一个作为element 元素事件处理程序的闭包，而这个闭包则又创建了一个循环引
+用（事件将在第13 章讨论）。由于匿名函数保存了一个对assignHandler()的活动对象的引用，因此
+就会导致无法减少element 的引用数。只要匿名函数存在，element 的引用数至少也是1，因此它所
+占用的内存就永远不会被回收。不过，这个问题可以通过稍微改写一下代码来解决，如下所示。-->
+<script>
+    function assignHandler() {
+        var element = document.getElementById('someElement');
+        var id = element.id
+        element.onclick = function () {
+            alert(id);
+        }
+        element = null;
+    }
+</script>
+<!--在上面的代码中，通过把element.id 的一个副本保存在一个变量中，并且在闭包中引用该变量消
+除了循环引用。但仅仅做到这一步，还是不能解决内存泄漏的问题。必须要记住：闭包会引用包含函数
+的整个活动对象，而其中包含着element。即使闭包不直接引用element，包含函数的活动对象中也
+仍然会保存一个引用。因此，有必要把element 变量设置为null。这样就能够解除对DOM 对象的引
+用，顺利地减少其引用数，确保正常回收其占用的内存。-->
+</body>
+</html>

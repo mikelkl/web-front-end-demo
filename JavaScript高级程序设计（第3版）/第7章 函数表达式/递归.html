@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>递归</title>
+</head>
+<body>
+<script>
+    function factorial(num) {
+        if (num <= 1) {
+            return 1;
+        } else {
+            // arguments.callee 是一个指向正在执行的函数的指针，因此可以用它来实现对函数
+            // 的递归调用
+            return num * arguments.callee(num - 1);
+        }
+    }
+
+    console.log(factorial(3));
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模仿块级作用域</title>
+</head>
+<body>
+<!--无论在什么地方，只要临时需要一些变量，就可以使用私有作用域-->
+<script>
+    function outputNumbers(count) {
+        (function () {
+            for (var i=0;i<count;i++){
+                alert(i);
+            }
+        })();
+
+        alert(i);// 导致一个错误！
+    }
+
+    outputNumbers(1);
+</script>
+</body>
+</html>
