@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frameset Example</title>
+</head>
+<frameset rows="160,*">
+    <frame src="https://www.baidu.com/" name="topFrame"/>
+    <frameset cols="50%,50%">
+        <frame src="https://www.baidu.com/" name="leftFrame"/>
+        <frame src="https://www.baidu.com/" name="rightFrame"/>
+    </frameset>
+</frameset>
+<!--以上代码创建了一个框架集，其中一个框架居上，两个框架居下。对这个例子而言，可以通过
+window.frames[0]或者window.frames["topFrame"]来引用上方的框架。不过，恐怕你最好使用
+top 而非window 来引用这些框架（例如，通过top.frames[0]）。
+我们知道，top 对象始终指向最高（最外）层的框架，也就是浏览器窗口。使用它可以确保在一个
+框架中正确地访问另一个框架。因为对于在一个框架中编写的任何代码来说，其中的window 对象指向
+的都是那个框架的特定实例，而非最高层的框架。图8-1 展示了在最高层窗口中，通过代码来访问前面
+例子中每个框架的不同方式。-->
+</html>

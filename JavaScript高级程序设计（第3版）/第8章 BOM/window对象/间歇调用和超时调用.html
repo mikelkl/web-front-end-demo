@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var num = 0;
+    var max = 10;
+
+    function incrementNumber() {
+        num++;
+
+        //如果执行次数达到了max 设定的值，则取消后续尚未执行的调用
+        if (num < max) {
+            setTimeout(incrementNumber, 500);
+        } else {
+            alert("DONE");
+        }
+    }
+
+    setTimeout(incrementNumber, 500);
+</script>
+<!--
+一般认为，使用超时调用来模拟间歇调用的是一种最佳模式。在开
+发环境下，很少使用真正的间歇调用，原因是后一个间歇调用可能会在前一个间歇调用结束之前启动。
+而像前面示例中那样使用超时调用，则完全可以避免这一点。所以，最好不要使用间歇调用。
+-->
+</body>
+</html>
