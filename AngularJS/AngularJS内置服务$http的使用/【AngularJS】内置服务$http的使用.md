@@ -2,3 +2,9 @@
 
 ___
 
+- $http.delete(url, config)
+- $http.get(url, config)
+- $http.head(url, config)
+- $http.jsonp(url, config)
+- $http.post(url, data, config)
+- $http.put(url, data, config)
