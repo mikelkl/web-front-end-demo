@@ -10,6 +10,10 @@ Angular2与AngularJS1.x相差很大，几乎等同于完全重构，并且目前
 
 [【AngularJS】进阶 - Services 与指令的使用](https://github.com/mikelkl/web-front-end-demo/blob/06d3816ab0794d58ae49a49ebee895a92a338b53/AngularJS/AngularJS%20%E8%BF%9B%E9%98%B6-%20Services%20%E4%B8%8E%E6%8C%87%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8/%E3%80%90AngularJS%E3%80%91%E8%BF%9B%E9%98%B6-%20Services%20%E4%B8%8E%E6%8C%87%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8.md)
 
+[【AngularJS】内置服务$http的使用](https://github.com/mikelkl/web-front-end-demo/blob/master/AngularJS/AngularJS%E5%86%85%E7%BD%AE%E6%9C%8D%E5%8A%A1%24http%E7%9A%84%E4%BD%BF%E7%94%A8/%E3%80%90AngularJS%E3%80%91%E5%86%85%E7%BD%AE%E6%9C%8D%E5%8A%A1%24http%E7%9A%84%E4%BD%BF%E7%94%A8.md)
+
+[【AngularJS】进阶- Directive 的使用](https://github.com/mikelkl/web-front-end-demo/blob/master/AngularJS/AngularJS%20%E8%BF%9B%E9%98%B6-%20Directive%20%E7%9A%84%E4%BD%BF%E7%94%A8/%E3%80%90AngularJS%E3%80%91%E8%BF%9B%E9%98%B6-%20Directive%20%E7%9A%84%E4%BD%BF%E7%94%A8.md)
+
 ## 项目构建与部署
 [【项目构建与部署】Grunt 介绍和应用](https://github.com/mikelkl/web-front-end-demo/blob/master/%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/Grunt%20%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%BA%94%E7%94%A8/%E3%80%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2%E3%80%91Grunt%20%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%BA%94%E7%94%A8.md)
 
