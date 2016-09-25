@@ -28,6 +28,8 @@ Angular2与AngularJS1.x相差很大，几乎等同于完全重构，并且目前
 ## 项目构建与部署
 [【项目构建与部署】Grunt 介绍和应用](https://github.com/mikelkl/web-front-end-demo/blob/master/%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/Grunt%20%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%BA%94%E7%94%A8/%E3%80%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2%E3%80%91Grunt%20%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%BA%94%E7%94%A8.md)
 
+[【项目构建与部署】Gulp 介绍和应用](https://github.com/mikelkl/web-front-end-demo/blob/master/%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2/Gulp%20%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%BA%94%E7%94%A8/%E3%80%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2%E3%80%91Gulp%20%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%BA%94%E7%94%A8.md)
+
 ## JavaScript深层研究
 [【JavaScript深层研究】监听JS变量的变化](https://github.com/mikelkl/web-front-end-demo/blob/master/JavaScript%E6%B7%B1%E5%B1%82%E7%A0%94%E7%A9%B6/%E7%9B%91%E5%90%ACJS%E5%8F%98%E9%87%8F%E7%9A%84%E5%8F%98%E5%8C%96/%E3%80%90JavaScript%E6%B7%B1%E5%B1%82%E7%A0%94%E7%A9%B6%E3%80%91%E7%9B%91%E5%90%ACJS%E5%8F%98%E9%87%8F%E7%9A%84%E5%8F%98%E5%8C%96.md)
 
@@ -37,3 +39,5 @@ Angular2与AngularJS1.x相差很大，几乎等同于完全重构，并且目前
 [【JavaScript高级程序设计】函数表达式](https://github.com/mikelkl/web-front-end-demo/blob/master/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC7%E7%AB%A0%20%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F.md)
 
 [【JavaScript高级程序设计】BOM](https://github.com/mikelkl/web-front-end-demo/blob/master/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC8%E7%AB%A0%20BOM/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91BOM.md)
+
+[【JavaScript高级程序设计】用户代理字符串检测技术](https://github.com/mikelkl/web-front-end-demo/blob/master/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC9%E7%AB%A0%20%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A3%80%E6%B5%8B/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91%E7%94%A8%E6%88%B7%E4%BB%A3%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF.md)
