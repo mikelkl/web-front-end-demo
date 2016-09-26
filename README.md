@@ -45,3 +45,5 @@ Angular2与AngularJS1.x相差很大，几乎等同于完全重构，并且目前
 [【JavaScript高级程序设计】用户代理字符串检测技术](https://github.com/mikelkl/web-front-end-demo/blob/master/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC9%E7%AB%A0%20%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%A3%80%E6%B5%8B/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91%E7%94%A8%E6%88%B7%E4%BB%A3%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF.md)
 
 [【JavaScript高级程序设计】DOM](https://github.com/mikelkl/web-front-end-demo/blob/63877c904e6da1cae81f1d2b2073a0462638306f/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC10%E7%AB%A0%20DOM/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91DOM.md)
+
+[【JavaScript高级程序设计】DOM扩展](https://github.com/mikelkl/web-front-end-demo/blob/master/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC11%E7%AB%A0%20DOM%E6%89%A9%E5%B1%95/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91DOM%E6%89%A9%E5%B1%95.md)
