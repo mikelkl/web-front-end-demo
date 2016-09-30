@@ -4,4 +4,7 @@
 # Grunt
 node_modules
 
+# Bower
+public\lib
+
 *.log
