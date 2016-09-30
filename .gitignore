@@ -5,6 +5,8 @@
 node_modules
 
 # Bower
-public\lib
+/项目构建与部署/Bower/bower_components/bootstrap/*
+/项目构建与部署/Bower/bower_components/d3/*
+/项目构建与部署/Bower/bower_components/jquery/*
 
 *.log
