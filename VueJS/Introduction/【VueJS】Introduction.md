@@ -1,4 +1,4 @@
-> *官网地址: http://vuejs.org/guide/index.html*
+> *官方文档: http://vuejs.org/guide/index.html*
 
 ---
 

@@ -22,6 +22,9 @@ Angular2与AngularJS1.x相差很大，几乎等同于完全重构，并且目前
 #### VueJS
 [【VueJS】Introduction](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Introduction/%E3%80%90VueJS%E3%80%91Introduction.md)
 
+[【VueJS】The Vue Instance](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/The%20Vue%20Instance/%E3%80%90VueJS%E3%80%91The%20Vue%20Instance.md)
+
+[【VueJS】Template Syntax](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Template%20Syntax/%E3%80%90VueJS%E3%80%91Template%20Syntax.md)
 
 
 ## NodeJS
