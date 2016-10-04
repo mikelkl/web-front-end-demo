@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computed Properties and Watchers</title>
+    <style>
+        .active {
+            background-color: #9E9E9E;
+        }
+
+        .text-danger {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div v-bind:class="classObject">classObject</div>
+
+<div v-bind:style="styleObject">styleObject</div>
+
+<script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
+<script>
+    // Binding HTML Classes
+    var classObjectVM = new Vue({
+        el: 'div:nth-of-type(1)',
+        data: {
+            classObject: {
+                active: true,
+                'text-danger': false
+            }
+        }
+    });
+
+    // Binding Inline Styles
+    var styleObjectVM = new Vue({
+        el: 'div:nth-of-type(2)',
+        data: {
+            styleObject: {
+                color: 'red',
+                fontSize: '13px'
+            }
+        }
+    })
+</script>
+</body>
+</html>
