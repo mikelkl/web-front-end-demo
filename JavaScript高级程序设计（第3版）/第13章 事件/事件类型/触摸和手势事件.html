@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>触摸和手势事件</title>
+</head>
+<body>
+<div id="output"></div>
+
+<script src="../EvenUtil.js"></script>
+<!--1. 触摸事件-->
+<script>
+    function handleTouchEvent(event) {
+
+        //只跟踪一次触摸
+        if (event.touches.length==1){
+            var output=document.getElementById('output');
+            switch (event.type){
+                case 'touchstart':
+                    output.innerHTML = "Touch started (" + event.touches[0].clientX +
+                            "," + event.touches[0].clientY + ")";
+                    break;
+                case 'touchend':
+                    output.innerHTML += "<br>Touch ended (" +
+                            event.changedTouches[0].clientX + "," +
+                            event.changedTouches[0].clientY + ")";
+                    break;
+                case 'touchmove':
+                    event.preventDefault(); //阻止滚动
+                    output.innerHTML += "<br>Touch moved (" +
+                            event.changedTouches[0].clientX + "," +
+                            event.changedTouches[0].clientY + ")";
+                    break;
+            }
+
+        }
+    }
+
+    EventUtil.addHandler(document, "touchstart", handleTouchEvent);
+    EventUtil.addHandler(document, "touchend", handleTouchEvent);
+    EventUtil.addHandler(document, "touchmove", handleTouchEvent);
+</script>
+</body>
+</html>

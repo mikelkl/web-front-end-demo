@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="myBtn">Click me!</button>
+<script src="../EvenUtil.js"></script>
+<script>
+    var btn = document.getElementById('myBtn');
+    var handler = function () {
+        alert('Clicked');
+    };
+    EventUtil.addHandler(btn, 'click', handler);
+
+    //这里省略了其他代码
+
+    EventUtil.removeHandler(btn, 'click', handler);
+</script>
+</body>
+</html>

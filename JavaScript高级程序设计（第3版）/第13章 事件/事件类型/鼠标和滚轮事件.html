@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            background-color: #E91E63;
+            height: 100px;
+            width: 100px;
+            border: 1px solid #880E4F;
+        }
+    </style>
+</head>
+<body>
+<div id="myDiv1">客户区坐标位置</div>
+<div id="myDiv2">页面坐标位置</div>
+<div id="myDiv3">屏幕坐标位置</div>
+<div id="myDiv4">修改键</div>
+<div id="myDiv5">相关元素</div>
+<div id="myDiv6">鼠标按钮</div>
+
+<script src="../EvenUtil.js"></script>
+<!--1. 客户区坐标位置-->
+<script>
+    var div = document.getElementById("myDiv1");
+    EventUtil.addHandler(div, "click", function (event) {
+        event = EventUtil.getEvent(event);
+        alert("Client coordinates: " + event.clientX + "," + event.clientY);
+    });
+</script>
+
+<!--2. 页面坐标位置-->
+<script>
+    /*通过客户区坐标能够知道鼠标是在视口中什么位置发生的，而页面坐标通过事件对象的pageX 和
+     pageY 属性，能告诉你事件是在页面中的什么位置发生的。换句话说，这两个属性表示鼠标光标在页面
+     中的位置，因此坐标是从页面本身而非视口的左边和顶边计算的。*/
+    var div = document.getElementById("myDiv2");
+    EventUtil.addHandler(div, "click", function (event) {
+        event = EventUtil.getEvent(event);
+        alert("Page coordinates: " + event.pageX + "," + event.pageY);
+    });
+    // 在页面没有滚动的情况下，pageX 和pageY 的值与clientX 和clientY 的值相等。
+</script>
+
+<!--3. 屏幕坐标位置-->
+<script>
+    /*鼠标事件发生时，不仅会有相对于浏览器窗口的位置，还有一个相对于整个电脑屏幕的位置。而通
+     过screenX 和screenY 属性就可以确定鼠标事件发生时鼠标指针相对于整个屏幕的坐标信息。*/
+    var div = document.getElementById("myDiv3");
+    EventUtil.addHandler(div, "click", function (event) {
+        event = EventUtil.getEvent(event);
+        alert("Screen coordinates: " + event.screenX + "," + event.screenY);
+    });
+</script>
+
+<!--4. 修改键-->
+<script>
+    /*虽然鼠标事件主要是使用鼠标来触发的，但在按下鼠标时键盘上的某些键的状态也可以影响到所要
+     采取的操作。这些修改键就是Shift、Ctrl、Alt 和Meta（在Windows 键盘中是Windows 键，在苹果机中
+     是Cmd 键），它们经常被用来修改鼠标事件的行为。DOM 为此规定了4 个属性，表示这些修改键的状
+     态：shiftKey、ctrlKey、altKey 和metaKey。这些属性中包含的都是布尔值，如果相应的键被按
+     下了，则值为true，否则值为false。当某个鼠标事件发生时，通过检测这几个属性就可以确定用户
+     是否同时按下了其中的键。*/
+    var div = document.getElementById("myDiv4");
+    EventUtil.addHandler(div, "click", function (event) {
+        event = EventUtil.getEvent(event);
+        var keys = new Array();
+
+        if (event.shiftKey) {
+            keys.push('shift');
+        }
+        if (event.ctrlKey) {
+            keys.push('ctrl');
+        }
+        if (event.altKey) {
+            keys.push('alt');
+        }
+        if (event.metaKey) {
+            keys.push('meta');
+        }
+
+        alert("Keys: " + keys.join(","));
+    });
+</script>
+
+<!--5. 相关元素-->
+<script>
+    /*在发生mouseover 和mouserout 事件时，还会涉及更多的元素。这两个事件都会涉及把鼠标指
+     针从一个元素的边界之内移动到另一个元素的边界之内。对mouseover 事件而言，事件的主目标是获
+     得光标的元素，而相关元素就是那个失去光标的元素。类似地，对mouseout 事件而言，事件的主目标
+     是失去光标的元素，而相关元素则是获得光标的元素。*/
+    var div = document.getElementById("myDiv5");
+    EventUtil.addHandler(div, "mouseout", function (event) {
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+        var relatedTarget = EventUtil.getRelatedTarget(event);
+        alert("Moused out of " + target.tagName + " to " + relatedTarget.tagName);
+    });
+</script>
+
+<!--6. 鼠标按钮-->
+<script>
+    /*DOM的button 属性可能有如下3 个值：0 表示主鼠标按钮，1 表示中间的鼠
+     标按钮（鼠标滚轮按钮），2 表示次鼠标按钮。在常规的设置中，主鼠标按钮就是鼠标左键，而次鼠标
+     按钮就是鼠标右键。*/
+    var div = document.getElementById("myDiv6");
+    EventUtil.addHandler(div, "mousedown", function(event){
+        event = EventUtil.getEvent(event);
+        alert(EventUtil.getButton(event));
+    });
+</script>
+</body>
+</html>

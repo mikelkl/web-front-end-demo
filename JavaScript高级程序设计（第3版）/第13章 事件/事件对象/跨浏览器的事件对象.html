@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="myBtn">Click me!</button>
+<script src="../EvenUtil.js"></script>
+<script>
+//    虽然DOM 和IE 中的event 对象不同，但基于它们之间的相似性依旧可以拿出跨浏览器的方案来。
+//    IE 中event 对象的全部信息和方法DOM 对象中都有，只不过实现方式不一样。不过，这种对应关系
+//    让实现两种事件模型之间的映射非常容易。
+    var btn = document.getElementById("myBtn");
+    btn.onclick = function (event) {
+        alert("Clicked");
+        event = EventUtil.getEvent(event);
+        EventUtil.stopPropagation(event);
+    };
+    document.body.onclick = function (event) {
+        alert("Body clicked");
+    };
+</script>
+</body>
+</html>

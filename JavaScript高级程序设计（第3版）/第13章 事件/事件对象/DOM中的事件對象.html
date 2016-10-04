@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <button id="myBtn">type Example</button>
+</div>
+
+<div>
+    <a href="http://www.163.com" id="myLink">Pre Example</a>
+</div>
+
+<div>
+    <button id="btn">stopPro Example</button>
+</div>
+
+<div>
+    <button id="btn1">evenPhase Example</button>
+</div>
+
+
+<!--在需要通过一个函数处理多个事件时，可以使用type 属性。-->
+<script>
+    var btn = document.getElementById('myBtn');
+    var handler = function (event) {
+        switch (event.type) {
+            case 'click':
+                alert('click');
+                break;
+            case 'mouseover':
+                event.target.style.backgroundColor = 'red';
+                break;
+            case 'mouseout':
+                event.target.style.backgroundColor = '';
+                break;
+        }
+    }
+    btn.onclick = handler;
+    btn.onmouseover = handler;
+    btn.onmouseout = handler;
+</script>
+
+<!--要阻止特定事件的默认行为，可以使用preventDefault()方法-->
+<script>
+    var link = document.getElementById('myLink');
+    link.onclick = function (event) {
+        event.preventDefault();
+    }
+</script>
+
+<!--stopPropagation()方法用于立即停止事件在DOM 层次中的传播，即取消进一步的事件
+捕获或冒泡-->
+<script>
+    var btn = document.getElementById('btn');
+    btn.onclick = function (event) {
+        alert('Clicked');
+        event.stopPropagation();
+    }
+
+    document.body.onclick = function (event) {
+        alert('Body clicked');
+    }
+</script>
+
+<!--事件对象的eventPhase 属性，可以用来确定事件当前正位于事件流的哪个阶段。如果是在捕获阶
+段调用的事件处理程序，那么eventPhase 等于1；如果事件处理程序处于目标对象上，则event-
+Phase 等于2；如果是在冒泡阶段调用的事件处理程序，eventPhase 等于3。这里要注意的是，尽管
+“处于目标”发生在冒泡阶段，但eventPhase 仍然一直等于2-->
+<script>
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function (event) {
+        alert(event.eventPhase); //2
+    };
+
+    document.body.addEventListener("click", function () {
+        alert(event.eventPhase); //1
+    }, true);
+
+    document.body.onclick = function (event) {
+        alert(event.eventPhase); //3
+    };
+</script>
+</body>
+</html>

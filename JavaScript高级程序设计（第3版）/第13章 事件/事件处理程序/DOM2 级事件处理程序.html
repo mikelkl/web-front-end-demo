@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="myBtn">Click me</button>
+<!--通过addEventListener()添加的事件处理程序只能使用removeEventListener()来移除；移
+除时传入的参数与添加处理程序时使用的参数相同。这也意味着通过addEventListener()添加的匿
+名函数将无法移除，如下面的例子所示。-->
+<script>
+    var btn = document.getElementById("myBtn");
+    btn.addEventListener('click', function () {
+        alert(this.id);
+    }, false); // 最后这个布尔值参数如果是true，表示在捕获阶段调用事件处理程序；如果是false，表示在冒泡阶段调用事件处理程序
+
+    //这里省略了其他代码
+
+    btn.removeEventListener('click', function () {//没有用！
+        alert(this.id);
+    }, false);
+</script>
+
+<!--在这个例子中，我们使用addEventListener()添加了一个事件处理程序。虽然调用remove-
+EventListener()时看似使用了相同的参数，但实际上，第二个参数与传入addEventListener()中
+的那一个是完全不同的函数。而传入removeEventListener()中的事件处理程序函数必须与传入
+addEventListener()中的相同，如下面的例子所示。-->
+<script>
+    var btn = document.getElementById("myBtn");
+    var handler=function () {
+        alert(this.id);
+    };
+    btn.addEventListener('click', handler, false);
+
+    //这里省略了其他代码
+
+    btn.removeEventListener('click', handler, false); //有效！
+</script>
+
+<!--大多数情况下，都是将事件处理程序添加到事件流的冒泡阶段，这样可以最大限度地兼容各种浏览
+器。最好只在需要在事件到达目标之前截获它的时候将事件处理程序添加到捕获阶段。如果不是特别需
+要，我们不建议在事件捕获阶段注册事件处理程序。-->
+</body>
+</html>

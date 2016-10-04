@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../EvenUtil.js"></script>
+<!--1. load 事件-->
+<script>
+    EventUtil.addHandler(window, "load", function(event){
+        alert("Loaded!");
+    });
+</script>
+
+<!--2. unload 事件-->
+<script>
+    EventUtil.addHandler(window, "unload", function(event){
+        alert("UnLoaded!");
+    });
+</script>
+
+<!--3. resize 事件-->
+<script>
+    EventUtil.addHandler(window, "resize", function(event){
+        alert("Resized");
+    });
+</script>
+
+<!--4. scroll 事件-->
+<script>
+    EventUtil.addHandler(window, "scroll", function(event){
+        if (document.compatMode == "CSS1Compat"){
+            alert(document.documentElement.scrollTop);
+        } else {
+            alert(document.body.scrollTop);
+        }
+    });
+</script>
+</body>
+</html>

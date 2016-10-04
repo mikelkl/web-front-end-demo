@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="show"></div>
+<input type="text" id="myText">
+
+
+<script src="../EvenUtil.js"></script>
+<script>
+    /*“DOM3 级事件”规范中引入了一个新事件，名叫textInput。根据规范，当用户在可编辑区域中
+     输入字符时，就会触发这个事件*/
+    var textbox = document.getElementById('myText');
+    var showbox = document.getElementById('show');
+    EventUtil.addHandler(textbox, 'textInput', function (event) {
+        event = EventUtil.getEvent(event);
+        showbox.innerHTML += event.data;
+    })
+</script>
+</body>
+</html>
