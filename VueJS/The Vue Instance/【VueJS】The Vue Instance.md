@@ -2,5 +2,5 @@
 
 ---
 
-### Lifecycle Diagram
+## Lifecycle Diagram
 ![Lifecycle Diagram](http://vuejs.org/images/lifecycle.png)
