@@ -26,6 +26,14 @@ Angular2与AngularJS1.x相差很大，几乎等同于完全重构，并且目前
 
 [【VueJS】Template Syntax](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Template%20Syntax/%E3%80%90VueJS%E3%80%91Template%20Syntax.md)
 
+[【VueJS】Computed Properties and Watchers](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Computed%20Properties%20and%20Watchers/%E3%80%90VueJS%E3%80%91Computed%20Properties%20and%20Watchers.md)
+
+[【VueJS】Class and Style Bindings](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Class%20and%20Style%20Bindings/%E3%80%90VueJS%E3%80%91Class%20and%20Style%20Bindings.md)
+
+[【VueJS】Conditional Rendering](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Conditional%20Rendering/%E3%80%90VueJS%E3%80%91Conditional%20Rendering.md)
+
+[【VueJS】List Rendering](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/List%20Rendering/%E3%80%90VueJS%E3%80%91List%20Rendering.md)
+
 
 ## NodeJS
 [【NodeJS】初识 NodeJS](https://github.com/mikelkl/web-front-end-demo/blob/master/NodeJS/%E5%88%9D%E8%AF%86%20NodeJS/%E3%80%90NodeJS%E3%80%91%E5%88%9D%E8%AF%86%20NodeJS.md)
