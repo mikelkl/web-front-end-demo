@@ -20,19 +20,19 @@ Angular2与AngularJS1.x相差很大，几乎等同于完全重构，并且目前
 [【ReactJS】React 概述](https://github.com/mikelkl/web-front-end-demo/blob/master/ReactJS/React%20%E6%A6%82%E8%BF%B0/%E3%80%90ReactJS%E3%80%91React%20%E6%A6%82%E8%BF%B0.md)
 
 #### VueJS
-[【VueJS】Introduction](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Introduction/%E3%80%90VueJS%E3%80%91Introduction.md)
+[【VueJS】Introduction](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Essentials/Introduction/%E3%80%90VueJS%E3%80%91Introduction.md)
 
-[【VueJS】The Vue Instance](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/The%20Vue%20Instance/%E3%80%90VueJS%E3%80%91The%20Vue%20Instance.md)
+[【VueJS】The Vue Instance](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Essentials/The%20Vue%20Instance/%E3%80%90VueJS%E3%80%91The%20Vue%20Instance.md)
 
-[【VueJS】Template Syntax](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Template%20Syntax/%E3%80%90VueJS%E3%80%91Template%20Syntax.md)
+[【VueJS】Template Syntax](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Essentials/Template%20Syntax/%E3%80%90VueJS%E3%80%91Template%20Syntax.md)
 
-[【VueJS】Computed Properties and Watchers](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Computed%20Properties%20and%20Watchers/%E3%80%90VueJS%E3%80%91Computed%20Properties%20and%20Watchers.md)
+[【VueJS】Computed Properties and Watchers](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Essentials/Computed%20Properties%20and%20Watchers/%E3%80%90VueJS%E3%80%91Computed%20Properties%20and%20Watchers.md)
 
-[【VueJS】Class and Style Bindings](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Class%20and%20Style%20Bindings/%E3%80%90VueJS%E3%80%91Class%20and%20Style%20Bindings.md)
+[【VueJS】Class and Style Bindings](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Essentials/Class%20and%20Style%20Bindings/%E3%80%90VueJS%E3%80%91Class%20and%20Style%20Bindings.md)
 
-[【VueJS】Conditional Rendering](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Conditional%20Rendering/%E3%80%90VueJS%E3%80%91Conditional%20Rendering.md)
+[【VueJS】Conditional Rendering](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Essentials/Conditional%20Rendering/%E3%80%90VueJS%E3%80%91Conditional%20Rendering.md)
 
-[【VueJS】List Rendering](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/List%20Rendering/%E3%80%90VueJS%E3%80%91List%20Rendering.md)
+[【VueJS】List Rendering](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Essentials/List%20Rendering/%E3%80%90VueJS%E3%80%91List%20Rendering.md)
 
 
 ## NodeJS
@@ -72,3 +72,5 @@ Angular2与AngularJS1.x相差很大，几乎等同于完全重构，并且目前
 [【JavaScript高级程序设计】DOM](https://github.com/mikelkl/web-front-end-demo/blob/63877c904e6da1cae81f1d2b2073a0462638306f/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC10%E7%AB%A0%20DOM/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91DOM.md)
 
 [【JavaScript高级程序设计】DOM扩展](https://github.com/mikelkl/web-front-end-demo/blob/master/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC11%E7%AB%A0%20DOM%E6%89%A9%E5%B1%95/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91DOM%E6%89%A9%E5%B1%95.md)
+
+[【JavaScript高级程序设计】事件](https://github.com/mikelkl/web-front-end-demo/blob/master/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC13%E7%AB%A0%20%E4%BA%8B%E4%BB%B6/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91%E4%BA%8B%E4%BB%B6.md)
