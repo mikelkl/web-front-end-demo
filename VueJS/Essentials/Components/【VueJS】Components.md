@@ -32,7 +32,7 @@ To make the composition work, we need a way to interweave the parent â€œcontentâ
 ## Dynamic Components
 You can use the same mount point and dynamically switch between multiple components using the reserved `<component>` element and dynamically bind to its `is` attribute:
 
-```html
+```javascript
 var vm = new Vue({
   el: '#example',
   data: {
@@ -54,7 +54,7 @@ var vm = new Vue({
 
 If you prefer, you can also bind directly to component objects:
 
-```html
+```javascript
 var Home = {
   template: '<p>Welcome home!</p>'
 }

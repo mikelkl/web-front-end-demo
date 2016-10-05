@@ -34,6 +34,12 @@ Angular2与AngularJS1.x相差很大，几乎等同于完全重构，并且目前
 
 [【VueJS】List Rendering](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Essentials/List%20Rendering/%E3%80%90VueJS%E3%80%91List%20Rendering.md)
 
+[【VueJS】Event Handling](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Essentials/Event%20Handling/%E3%80%90VueJS%E3%80%91Event%20Handling.md)
+
+[【VueJS】Form Input Bindings](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Essentials/Form%20Input%20Bindings/%E3%80%90VueJS%E3%80%91Form%20Input%20Bindings.md)
+
+[【VueJS】Components](https://github.com/mikelkl/web-front-end-demo/blob/master/VueJS/Essentials/Components/%E3%80%90VueJS%E3%80%91Components.md)
+
 
 ## NodeJS
 [【NodeJS】初识 NodeJS](https://github.com/mikelkl/web-front-end-demo/blob/master/NodeJS/%E5%88%9D%E8%AF%86%20NodeJS/%E3%80%90NodeJS%E3%80%91%E5%88%9D%E8%AF%86%20NodeJS.md)
