@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handling</title>
+</head>
+<body>
+<div id="example-1">
+    <button v-on:click="counter+=1">Add 1</button>
+    <p>The button above has been clicked {{counter}} times.</p>
+</div>
+
+<div id="example-2">
+    <button v-on:click="greet">Greet</button>
+</div>
+
+<div id="example-3">
+    <button v-on:click="say('hi')">Say hi</button>
+    <button v-on:click="say('what')">Say what</button>
+</div>
+
+<script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
+<script>
+    // Listening to Events
+    var example = new Vue({
+        el: '#example-1',
+        data: {
+            counter: 0
+        }
+    });
+
+    // Method Event Handlers
+    var example2 = new Vue({
+        el: '#example-2',
+        data: {
+            name: 'Vue.js'
+        },
+        // define methods under the `methods` object
+        methods: {
+            greet: function (event) {
+                // `this` inside methods points to the Vue instance
+                alert('Hello ' + this.name + '!');
+                // `event` is the native DOM event
+                alert(event.target.tagName);
+            }
+        }
+    });
+
+    // Methods in Inline Handlers
+    new Vue({
+        el: '#example-3',
+        methods: {
+            say: function (message) {
+                alert(message)
+            }
+        }
+    });
+</script>
+</body>
+</html>
