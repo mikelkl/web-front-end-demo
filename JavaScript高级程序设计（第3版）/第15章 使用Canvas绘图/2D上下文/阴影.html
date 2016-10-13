@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阴影</title>
+</head>
+<body>
+<canvas id="drawing" width="200" height="200">A drawing of something.</canvas>
+
+<script>
+    /**
+     * shadowColor：用CSS 颜色格式表示的阴影颜色，默认为黑色。
+     * shadowOffsetX：形状或路径x 轴方向的阴影偏移量，默认为0。
+     * shadowOffsetY：形状或路径y 轴方向的阴影偏移量，默认为0。
+     * shadowBlur：模糊的像素数，默认0，即不模糊。
+     */
+    var drawing = document.getElementById("drawing");
+    //确定浏览器支持<canvas>元素
+    if (drawing.getContext) {
+        var context = drawing.getContext('2d');
+
+        context.shadowOffsetX = 5;
+        context.shadowOffsetY = 5;
+        context.shadowBlur = 4;
+        context.shadowColor = "rgba(0,0,0,0.5)";
+
+        context.fillStyle = '#ff0000';
+        context.fillRect(10, 10, 50, 50);
+
+        context.fillStyle = 'rgba(0,0,255,1)';
+        context.fillRect(30, 30, 50, 50);
+    }
+</script>
+</body>
+</html>

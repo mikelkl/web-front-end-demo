@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制矩形</title>
+</head>
+<body>
+<canvas id="drawing" width="500" height="500">A drawing of something.</canvas>
+
+<script>
+    var drawing = document.getElementById("drawing");
+
+    //确定浏览器支持<canvas>元素
+    if (drawing.getContext) {
+        var context = drawing.getContext('2d');
+
+        //绘制红色矩形
+        context.fillStyle = '#ff0000';
+        context.fillRect(10, 10, 50, 50);
+
+        //绘制半透明的蓝色矩形
+        context.fillStyle = 'rgba(0,0,255,0.5)';
+        context.fillRect(30, 30, 50, 50);
+        //绘制红色描边矩形
+        context.strokeStyle = '#ff0000';
+
+        context.strokeRect(100, 100, 50, 50);
+        //绘制半透明的蓝色描边矩形
+        context.strokeStyle = 'rgba(0,0,255,0.5)';
+
+        context.strokeRect(130, 130, 50, 50);
+
+        //绘制红色矩形
+        context.fillStyle = '#ff0000';
+        context.fillRect(210, 210, 50, 50);
+
+        //绘制半透明的蓝色矩形
+        context.fillStyle = 'rgba(0,0,255,0.5)';
+        context.fillRect(230, 230, 50, 50);
+
+        //在两个矩形重叠的地方清除一个小矩形
+        context.clearRect(240, 240, 10, 10);
+    }
+</script>
+</body>
+</html>

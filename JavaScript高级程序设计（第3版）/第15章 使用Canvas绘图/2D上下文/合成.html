@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合成</title>
+</head>
+<body>
+<canvas id="drawing" width="200" height="200">A drawing of something.</canvas>
+<canvas id="drawing1" width="200" height="200">A drawing of something.</canvas>
+
+<script>
+    /*2lobalAlpha 是一个介于0 和1 之间的值（包括0 和1），用于指定所有绘制的透
+     明度。默认值为0。如果所有后续操作都要基于相同的透明度，就可以先把globalAlpha 设置为适当
+     值，然后绘制，最后再把它设置回默认值0*/
+    var drawing = document.getElementById("drawing");
+
+    //确定浏览器支持<canvas>元素
+    if (drawing.getContext) {
+        var context = drawing.getContext('2d');
+
+        //绘制红色矩形
+        context.fillStyle = '#ff0000';
+        context.fillRect(10, 10, 50, 50);
+
+        // 修改全局透明度
+        context.globalAlpha = 0.5;
+
+        //绘制蓝色矩形
+        context.fillStyle = 'rgba(0,0,255,1)';
+        context.fillRect(30, 30, 50, 50);
+
+        // 重置全局透明度
+        context.globalAlpha = 0;
+    }
+</script>
+
+<script>
+    /*globalCompositionOperation 表示后绘制的图形怎样与先绘制的图形结合*/
+    var drawing = document.getElementById("drawing1");
+
+    //确定浏览器支持<canvas>元素
+    if (drawing.getContext) {
+        var context = drawing.getContext('2d');
+
+        //绘制红色矩形
+        context.fillStyle = '#ff0000';
+        context.fillRect(110, 110, 50, 50);
+
+        // 设置合成操作
+        context.globalCompositeOperation = "destination-over";
+
+        //绘制蓝色矩形
+        context.fillStyle = 'rgba(0,0,255,1)';
+        context.fillRect(130, 130, 50, 50);
+    }
+</script>
+</body>
+</html>

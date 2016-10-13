@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>填充和描边</title>
+</head>
+<body>
+<canvas id="drawing" width="200" height="200">A drawing of something.</canvas>
+
+<script>
+    /*2D 上下文的两种基本绘图操作是填充和描边。填充，就是用指定的样式（颜色、渐变或图像）填
+     充图形；描边，就是只在图形的边缘画线。大多数2D 上下文操作都会细分为填充和描边两个操作，而
+     操作的结果取决于两个属性：fillStyle 和strokeStyle。*/
+    var drawing = document.getElementById("drawing");
+
+    //确定浏览器支持<canvas>元素
+    if (drawing.getContext) {
+        var context = drawing.getContext('2d');
+        context.strokeStyle = 'red';
+        context.fillStyle = '#0000ff';
+    }
+</script>
+</body>
+</html>

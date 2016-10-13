@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制文本</title>
+</head>
+<body>
+<canvas id="drawing" width="500" height="500">A drawing of something.</canvas>
+
+<script>
+    /*这个例子使用arc()方法绘制了两个圆形：一个外圆和一个内圆，构成了表盘的边框。外圆的半径
+     是99 像素，圆心位于点(100,100)，也是画布的中心点。为了绘制一个完整的圆形，我们从0 弧度开始，
+     绘制2π 弧度（通过Math.PI 来计算）。在绘制内圆之前，必须把路径移动到内圆上的某一点，以避免
+     绘制出多余的线条。第二次调用arc()使用了小一点的半径，以便创造边框的效果。然后，组合使用
+     moveTo()和lineTo()方法来绘制时针和分针。最后一步是调用stroke()方法，这样才能把图形绘制
+     到画布上，*/
+    var drawing = document.getElementById("drawing");
+
+    //确定浏览器支持<canvas>元素
+    if (drawing.getContext) {
+        var context = drawing.getContext('2d');
+
+        //开始路径
+        context.beginPath();
+
+        //绘制外圆
+        context.arc(100, 100, 99, 0, 2 * Math.PI, false);
+
+        //绘制内圆
+        context.moveTo(194, 100);
+        context.arc(100, 100, 94, 0, 2 * Math.PI, false);
+
+        //绘制分针
+        context.moveTo(100, 100);
+        context.lineTo(100, 15);
+
+        //绘制时针
+        context.moveTo(100, 100);
+        context.lineTo(35, 100);
+
+        //描边路径
+        context.stroke();
+
+        context.font = 'bold 14px Arial';
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        context.fillText('12', 100, 20);
+
+        context.textAlign = 'start';
+        context.fillText('12', 100, 40);
+
+        context.textAlign = 'end';
+        context.fillText('12', 100, 60);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用图像数据</title>
+</head>
+<body>
+<canvas id="drawing" width="200" height="200">A drawing of something.</canvas>
+<img src="./logo.png" alt="">
+
+<script>
+    /*2D 上下文的两种基本绘图操作是填充和描边。填充，就是用指定的样式（颜色、渐变或图像）填
+     充图形；描边，就是只在图形的边缘画线。大多数2D 上下文操作都会细分为填充和描边两个操作，而
+     操作的结果取决于两个属性：fillStyle 和strokeStyle。*/
+    var drawing = document.getElementById("drawing");
+
+    //确定浏览器支持<canvas>元素
+    if (drawing.getContext) {
+        var context = drawing.getContext('2d'),
+                image = document.images[0],
+                imageData, data,
+                i, len, average,
+                red, green, blue, alpha;
+
+        //绘制原始图像
+        context.drawImage(image, 0, 0);
+
+        //取得图像数据
+        imageData = context.getImageData(0, 0, image.width, image.height);
+        data = imageData.data;
+
+        for (i = 0, len = data.length; i < len; i += 4) {
+            red = data[i];
+            green = data[i + 1];
+            blue = data[i + 2];
+            alpha = data[i + 3];
+
+            //求得rgb 平均值
+            average = Math.floor((red + green + blue) / 3);
+
+            //设置颜色值，透明度不变
+            data[i] = average;
+            data[i + 1] = average;
+            data[i + 2] = average;
+        }
+
+        //回写图像数据并显示结果
+        imageData.data = data;
+        context.putImageData(imageData, 0, 0);
+    }
+</script>
+</body>
+</html>
