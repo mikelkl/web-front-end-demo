@@ -80,3 +80,5 @@ Angular2与AngularJS1.x相差很大，几乎等同于完全重构，并且目前
 [【JavaScript高级程序设计】DOM扩展](https://github.com/mikelkl/web-front-end-demo/blob/master/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC11%E7%AB%A0%20DOM%E6%89%A9%E5%B1%95/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91DOM%E6%89%A9%E5%B1%95.md)
 
 [【JavaScript高级程序设计】事件](https://github.com/mikelkl/web-front-end-demo/blob/master/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC13%E7%AB%A0%20%E4%BA%8B%E4%BB%B6/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91%E4%BA%8B%E4%BB%B6.md)
+
+[【JavaScript高级程序设计】使用Canvas绘图](https://github.com/mikelkl/web-front-end-demo/blob/master/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89/%E7%AC%AC15%E7%AB%A0%20%E4%BD%BF%E7%94%A8Canvas%E7%BB%98%E5%9B%BE/%E3%80%90JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%91%E4%BD%BF%E7%94%A8Canvas%E7%BB%98%E5%9B%BE.md)
