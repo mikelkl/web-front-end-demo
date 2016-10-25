@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用索引</title>
+</head>
+<body>
+<script src="initDb.js"></script>
+
+<script>
+
+    request.onsuccess = function (event) {
+        var db = event.target.result;
+
+        var objectStore = db.transaction("customers").objectStore("customers");
+
+        /*使用 SSN 作为键来存储客户数据是合理的，因为 SSN 唯一地标识了一个个体（对隐私来说这是否是一个好的想法是另外一个话题，不在本文的讨论范围内）。如果你想要通过姓名来查找一个客户，那么，你将需要在数据库中迭代所有的 SSN 直到你找到正确的那个。以这种方式来查找将会非常的慢，相反你可以使用索引。*/
+        var index = objectStore.index("name");
+        index.get("Donna").onsuccess = function (event) {
+            console.log("Donna's SSN is " + event.target.result.ssn);
+        };
+
+        index.openCursor().onsuccess = function (event) {
+            var cursor = event.target.result;
+            if (cursor) {
+                // cursor.key 是一个 name, 就像 "Bill", 然后 cursor.value 是整个对象。
+                console.log("Name: " + cursor.key + ", SSN: " + cursor.value.ssn + ", email: " + cursor.value.email);
+                cursor.continue();
+            }
+        };
+
+        index.openKeyCursor().onsuccess = function (event) {
+            var cursor = event.target.result;
+            if (cursor) {
+                // cursor.key is 一个 name, 就像 "Bill", 然后 cursor.value 是那个 SSN。
+                // 没有办法可以得到存储对象的其余部分。
+                console.log("Name: " + cursor.key + "SSN: " + cursor.value);
+                cursor.continue();
+            }
+        };
+
+        /*指定游标的范围和方向*/
+
+        // 只匹配 "Donna"
+        var singleKeyRange = IDBKeyRange.only("Donna");
+
+        // 匹配所有在 "Bill" 前面的, 包括 "Bill"
+        var lowerBoundKeyRange = IDBKeyRange.lowerBound("Bill");
+
+        // 匹配所有在 “Bill” 前面的, 但是不需要包括 "Bill"
+        var lowerBoundOpenKeyRange = IDBKeyRange.lowerBound("Bill", true);
+
+        // Match anything up to, but not including, "Donna"
+        var upperBoundOpenKeyRange = IDBKeyRange.upperBound("Donna", true);
+
+        //Match anything between "Bill" and "Donna", but not including "Donna"
+        var boundKeyRange = IDBKeyRange.bound("Bill", "Donna", false, true);
+
+        index.openCursor(boundKeyRange).onsuccess = function (event) {
+            var cursor = event.target.result;
+            if (cursor) {
+                // Do something with the matches.
+                console.log(cursor.value);
+                cursor.continue();
+            }
+        };
+    };
+</script>
+</body>
+</html>

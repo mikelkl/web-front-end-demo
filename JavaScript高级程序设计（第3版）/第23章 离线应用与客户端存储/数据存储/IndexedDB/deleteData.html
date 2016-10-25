@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除数据</title>
+</head>
+<body>
+<script src="initDb.js"></script>
+
+<script>
+    request.onsuccess = function (event) {
+        var db = event.target.result;
+
+        var request = db.transaction(["customers"], "readwrite")
+                .objectStore("customers")
+                .delete("555-55-5555");
+        request.onsuccess = function(event) {
+            // 删除数据成功！
+        };
+        request.onerror = function(e) {
+            console.log("Error",e.target.error);
+            // error handler
+        };
+    };
+</script>
+</body>
+</html>

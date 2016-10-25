@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获得数据</title>
+</head>
+<body>
+<script src="initDb.js"></script>
+
+<script>
+    request.onsuccess = function (event) {
+        var db = event.target.result;
+
+        db.transaction("customers").objectStore("customers").get("444-44-4444").onsuccess = function(event) {
+            console.log("Name for SSN 444-44-4444 is " + event.target.result.name);
+        };
+    };
+</script>
+</body>
+</html>

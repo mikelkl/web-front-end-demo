@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>并发</title>
+</head>
+<body>
+<script src="initDb.js"></script>
+
+<script>
+    request.onblocked = function(event) {
+        // 如果其他标签页已经加载了这个数据库，那么
+        // 在我们可以继续处理之前它需要被关闭。
+        alert("Please close all other tabs with this site open!");
+    };
+
+    request.onupgradeneeded = function(event) {
+        // 所有其它数据库都已经被关掉了。Set everything up.
+        db.createObjectStore(/* ... */);
+        useDatabase(db);
+    };
+
+    request.onsuccess = function(event) {
+        var db = event.target.result;
+        useDatabase(db);
+        return;
+    };
+
+    function useDatabase(db) {
+        // 确保添加一个如果另一个页面请求一个版本变化时来被通知的处理程序。
+        // 我们必须关闭这个数据库。这就允许其他页面对数据库进行升级。
+        // 如果你不这么做的话，除非用户关闭标签页否则升级就不会发生。
+        db.onversionchange = function(event) {
+            db.close();
+            alert("A new version of this page is ready. Please reload!");
+        };
+
+        // 其他针对数据库的处理
+    }
+</script>
+</body>
+</html>

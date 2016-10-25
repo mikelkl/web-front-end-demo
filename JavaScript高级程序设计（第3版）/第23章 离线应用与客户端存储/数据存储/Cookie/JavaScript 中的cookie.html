@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 中的cookie</title>
+</head>
+<body>
+<script src="./CookieUtil.js"></script>
+<script>
+    //设置cookie
+    CookieUtil.set("name", "Nicholas");
+    CookieUtil.set("book", "Professional JavaScript");
+
+    //读取cookie 的值
+    console.log(CookieUtil.get("name")); //"Nicholas"
+    console.log(CookieUtil.get("book")); //"Professional JavaScript"
+
+    //删除cookie
+    CookieUtil.unset("name");
+    CookieUtil.unset("book");
+
+    //设置cookie，包括它的路径、域、失效日期
+    CookieUtil.set("name", "Nicholas", "/books/projs/", "www.wrox.com",
+            new Date("January 1, 2017"));
+
+    //删除刚刚设置的cookie
+    CookieUtil.unset("name", "/books/projs/", "www.wrox.com");
+    //设置安全的cookie
+    CookieUtil.set("name", "Nicholas", null, null, null, true);
+</script>
+</body>
+</html>

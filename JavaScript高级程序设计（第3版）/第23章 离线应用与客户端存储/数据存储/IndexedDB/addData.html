@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加数据</title>
+</head>
+<body>
+<script src="initDb.js"></script>
+
+<script>
+    request.onerror = function (event) {
+        // 错误处理程序在这里。
+    };
+    request.onsuccess = function (event) {
+        var db = event.target.result;
+        var transaction = db.transaction(["customers"], "readwrite");
+
+        /*向数据库中增加数据*/
+
+        // 当所有的数据都被增加到数据库时执行一些操作
+        transaction.oncomplete = function(event) {
+            console.log("All done!");
+        };
+
+        transaction.onerror = function(event) {
+            // 不要忘记进行错误处理！
+        };
+
+        var objectStore = transaction.objectStore("customers");
+        for (var i in customerData) {
+            var request = objectStore.add(customerData[i]);
+            request.onerror = function(e) {
+                console.log("Error",e.target.error);
+                // error handler
+            };
+            request.onsuccess = function(event) {
+                // event.target.result == customerData[i].ssn
+                console.log(event.target.result);
+            };
+        };
+
+    };
+</script>
+</body>
+</html>
