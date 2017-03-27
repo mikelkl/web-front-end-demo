@@ -1,0 +1,831 @@
+/*
+MMMMMMMMMMMMMMMdydNy:........:yNdydMMMMMMMMMMMMMMs
+MMMMMMMMMMMds/-..-+ossyddddysso+-..-/sdMMMMMMMMMMs
+MMMMMMMMms:..:oymmdyyssssssssyydmmyo:..:smMMsmMMMs
+MMMMMMNNo.-ydNhs+////////////////+shNdy-.oNN/dMMMs
+MMMMNo.:/ymho////////////////////////ohmy/:.-dMMMs
+MMMh-.-yNh+////////////////////-..`` //+hNy-.-hMMs
+MMh..:mmo/////////////////////`    .-////omm-..hMs
+Mh../Nd+////:..``-+//////////:    `///////+d/-..hs
+My-:Nm+/////.    -+/////////-.      `+/////+/h:-ys
+h+-hMo//////.    -/.````-//:      `::////////dh-+:
+-.-Mm//////+.    ```     :+//-    .+/////////dM-..
+..oMd//////+.    .//.    .///-    .//////////dMo..
+..oMd//////+.    ://-    .///-    .//////////dMo..
+-.-Mm//////+.    ://-    .///-    .//////////dM-..
+h+-hMo//////`    ://-    .//+-    -//////////dh-+:
+My-:Nm//////`    ://-    -//+-    -//////////h:-ys
+Mh../Nh////+`    .:-`   `///+-``..:////////h/-..hs
+MMh..:mmo///`    .`   `-/////////////////+mm-..hMs
+MMMh-.-ymy+/...--///://////////////////+ymy-.-hMMs
+MMMMNo.:/ymyo////////////////////////+ymy/:.-dMMMs
+MMMMMMNNo.-sddyo//////////////////oydds-.oNN/dMMMs
+MMMMMMMMms:..:oyddhyss++++++ssyhddyo:..:smMM+mMMMs
+MMMMMMMMMMMds/-..-+ossyddddysso+-..-/sdMMMMMMMMMMs
+MMMMMMMMMMMMMMMdydNy:........:yNdydMMMMMMMMMMMMMMs
+*/
+
+/* Some Notes:
+
+-- This website has been coded by Ben Frain as a fictional case study to accompany the book 'Responsive Web Design with HTML5 and CSS3'. What do you mean you haven't ordered it yet? Get it here: http://www.amazon.com/Responsive-Web-Design-HTML5-CSS3/dp/1849693188/ref=sr_1_8?ie=UTF8&qid=1334054932&sr=8-8;
+
+-- I've used Lea Verou's 'prefix free' JavaScript to add vendor prefixes to all my CSS3 declarations as and when they are needed. I do this here so the code is easier to read and I can use the W3C specified declarations. This wouldn't always make the most sense in a production environment. You'd typically want to add vendor prefixes like -moz-, -webkit- etc.
+
+-- also, as you can see if you are reading this, the CSS isn't compressed and many declarations have been written 'long hand' to aid in reading the code. This isn't best practice in a production environment.
+
+-- some people like to alphabetize their CSS declarations. I don't, sorry.
+
+*/
+
+/* Here is the normalize.css courtesy of Nicholas Gallagher (he's clever by the way). This section tries to 'normalize' the behaviour of various browsers */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: black;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+
+/* self-clear floats - if you need them, this is my (current) favourite technique. More info: http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    zoom:1;
+}
+
+/* wrap url's */
+pre {
+	white-space: pre;           /* CSS 2.0 */
+	white-space: pre-wrap;      /* CSS 2.1 */
+	white-space: pre-line;      /* CSS 3.0 */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -hp-pre-wrap;  /* HP Printers */
+	word-wrap: break-word;      /* IE 5+ */
+	}
+	
+
+
+/* Now here are the @font-tace files. I used examples from font-squirrel but TypeKit and FontDeck are good solutions too. Even Google has webfonts available */
+	
+@font-face {
+    font-family: 'BitstreamVeraSansRoman';
+    src: url('../fonts/Vera-webfont.eot');
+    src: url('../fonts/Vera-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Vera-webfont.woff') format('woff'),
+         url('../fonts/Vera-webfont.ttf') format('truetype'),
+         url('../fonts/Vera-webfont.svg#BitstreamVeraSansRoman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('../fonts/BebasNeue-webfont.eot');
+    src: url('../fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/BebasNeue-webfont.woff') format('woff'),
+         url('../fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('../fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ColaborateThinRegular';
+    src: url('../fonts/ColabThi-webfont.eot');
+    src: url('../fonts/ColabThi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ColabThi-webfont.woff') format('woff'),
+         url('../fonts/ColabThi-webfont.ttf') format('truetype'),
+         url('../fonts/ColabThi-webfont.svg#ColaborateThinRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* This little bit is just for the warning message at the top of every page telling people it's a fictional website */
+
+#book {
+	display: none;
+	width: 99%;
+	padding: 0.5%;
+	font-family: 'BebasNeueRegular', serif;
+	font-size: 1.4em;
+	letter-spacing: 0.1em;
+	color: #fff;
+	text-shadow: 0px 2px 2px #000;
+	display: block;
+	text-align: center;
+	border-bottom: 2px solid #000;
+	background-color: #111;
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, hsla(35,94%,62%,0.8) 35px, hsla(35,94%,62%,0.5) 70px);
+}	
+
+.pimpingBook {
+	max-width: 25%;
+	transform: rotate(3deg);
+	box-shadow: 3px 3px 6px #000;
+	margin: 30px 40px 0px 0px;
+	float: left;	
+}
+
+/* This rule just sets a different selection color when you highlight text */
+
+::selection {
+	background: #ff9900;
+}
+
+/* in the book I talked about CSS patterns - this body style adds the feint grid to the body of all pages in supporting browsers */
+
+body {
+	background-color:#fff;
+	background-image: linear-gradient(#f3f3f3 2px, transparent 2px),
+  		linear-gradient(0, #f3f3f3 2px, transparent 2px),
+  		linear-gradient(hsla(0,92%,0%,.03) 1px, transparent 1px),
+  		linear-gradient(0, hsla(0,92%,0%,.03) 1px, transparent 1px);
+	background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+	background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px
+}
+
+/* And this bit just makes the current page underline in the navigation on larger viewports */
+
+#home nav[role="navigation"] li:nth-child(1),#about nav[role="navigation"] li:nth-child(2),#offline nav[role="navigation"] li:nth-child(3),#redemptionPage nav[role="navigation"] li:nth-child(4),#video nav[role="navigation"] li:nth-child(5),#quiz nav[role="navigation"] li:nth-child(6) {
+	text-decoration: underline;
+}
+
+/* Now I want to make any inline video and img elements automatically scale to 100% of their parent container. This can be over-ridden by more specific styles as needed */
+
+a {
+	color: #666;
+	transition: all 0.7s;
+}
+a:hover {
+	color: #000;
+}
+
+img,video { 
+	max-width: 100%; height: auto; 
+}
+#wrapper {
+	margin-right: auto;
+	margin-left: auto;
+	width: 96%; /* Holding outermost DIV */
+	max-width: 1306px;
+	background-color: hsla(0, 0%, 100%, 0.61); /* you'd use this if you had a colored background on the body, HSLA (and RGBA) allow an alpha channel so you can 'see through' them */
+}
+img[alt^="film"] {
+	border: 3px dashed #e15f5f;
+}
+header {
+	background-position: 0 top;
+	background-repeat: repeat-x;
+	background-image: url(../img/buntingFW.png);
+	margin-right: auto; /* 10 ÷ 960 */
+	margin-left: auto; /* 10 ÷ 960 */
+	width: 97.9166667%; /* 940 ÷ 960 */
+}
+header a {
+	text-decoration: none;
+}
+#logo { 
+	display: block; 
+	padding-top: 75px; 
+	color: #0d0c0c; 
+	text-transform: uppercase; 
+	font-family: 'BebasNeueRegular'; 
+	font-size: 3em; /* 48 ÷ 16 = 3*/
+}
+#logo span { 
+	color: #dfdada; 
+}
+nav { 
+	display: table; 
+	margin-bottom: 25px; 
+	margin-top: 26px; 
+	padding-right: 1.0416667%; /* 10 ÷ 960 */ 
+	padding-left: 1.0416667%; /* 10 ÷ 960 */ 
+	width: 97.9166667%; /* 940 ÷ 960 */ 
+	background: linear-gradient(top, hsla(0,0%,100%,0.11) 0%,hsla(0,0%,94%,0.11) 10%,hsla(0,0%,84%,0.11) 22%,hsla(0,0%,62%,0.11) 41%,hsla(0,0%,38%,0.11) 61%,hsla(0,0%,22%,0.11) 76%,hsla(0,0%,10%,0.11) 88%,hsla(0,0%,1%,0.11) 100%);
+	border-bottom-color: #bfbfbf; 
+	border-bottom-style: double; border-bottom-width: 4px; 
+}
+/* because we are using Modernizr we can provide a 'fork' style here for IE as it doesn't understand css gradients (as of v9 and below) */ 
+.-ms- nav {
+	padding-bottom: 25px; 
+	margin-top: 26px; 
+	background-repeat: repeat-x; 
+	background-image: url(../img/atwiNavBg.png); 
+}
+nav ul {
+	display: table-row;
+	width: 100%;
+}
+nav ul li { 
+	text-align: center; 
+	display: table-cell;
+	margin-left: 1.3%;
+	margin-right: 1.3%;
+}
+nav ul li:last-child {
+	text-align: right;
+}
+nav ul li:first-child {
+	text-align: left;
+}
+nav ul li a { 
+	height: 42px;
+	text-decoration: none; 
+	text-transform: uppercase;  
+	color: black; 
+	text-shadow: 0 1px 0 hsla(0, 0%, 100%, 1.0);
+	font: 1.875em/42px 'BebasNeueRegular';
+	display: block;	
+}
+nav ul li a:hover {
+	animation: warning 1.5s infinite ease-in;
+}
+nav ul li:nth-child(odd) a {
+	color: fe0208;
+	color: hsl(359, 99%, 50%);
+}
+nav ul li:nth-child(odd) a:hover {
+	color: hsl(359, 99%, 40%);
+}
+#content {
+	margin-top: 28px;
+	margin-right: 1.0416667%; /* 10 ÷ 960 */
+	float: right;
+	width: 72.7083333%; /* 698 ÷ 960 */	
+	height: 100%;
+}
+.oscarMain { 
+	float: left; 
+	width: 28.9398281%; /* 698 ÷ 202 */
+	max-width: 202px;
+	margin-right: 1%;
+}
+.element {
+	text-shadow: 4px 8px 1px #ccc;
+}
+#content h1 { 
+	text-transform: uppercase; 
+	font-family: 'BebasNeueRegular';
+	font-size: 6.375em;  /* 102 ÷ 16 */
+	text-shadow: 0px 1px white,4px 4px 0px #dad7d7 ; /* 4 ÷ 102 */
+	font-weight: 400;
+}
+#content h1 em {
+	display: block; 
+	color: #504e4e; 
+	text-shadow: none;
+	font: .352941176em/1.052631579em 'BitstreamVeraSansRoman';
+	font-weight: 400;
+}
+#content h2 {
+	font-family: 'BebasNeueRegular'; 
+	font-size: 1.875em; /* 30px ÷ 16 */ 
+	text-transform: uppercase;
+	font-weight: 400;
+}
+#content h2 a {
+	color: #FD0105;
+}
+#content h3 {
+	font-family: 'BebasNeueRegular'; 
+	font-size: 1.2em;  
+	color: #bfbfbf;
+	font-weight: 400;
+}
+#content p { 
+	font-family: 'ColaborateThinRegular';
+	line-height: 40px; 
+	color: #757474; 
+	font-size: 1.875em; /* 24px ÷ 16 */ 
+}
+#content p em {
+	text-decoration: underline;
+}
+#content a.button {
+	text-decoration: none;
+	font: 2.25em 'BebasNeueRegular'; /* 36px ÷ 16 */
+	background-color: #b01c20;
+	background: linear-gradient(top, rgb(241,92,96) 0%, rgb(176,28,32) 100%);
+	border-radius: 8px;
+	color: white;
+	padding: 3%;
+	float: left;
+	margin-top: 30px;
+	box-shadow: 5px 5px 5px hsla(0, 0%, 26.6667%, 0.8);
+	text-shadow: 0px 1px black;
+	border: 1px solid #bfbfbf;
+	transition-property: border, color, text-shadow;
+	transition-duration: 2s, 3s, 8s; 
+}
+#content a.button:hover {
+	border: 1px solid black;
+	color: black;
+	text-shadow: 0px 1px white;
+	background: linear-gradient(top, rgb(145,62,56) 0%,rgb(176,28,32) 100%);	
+}
+#content a span {
+	font-size: 1.3em;
+}
+#content p i {
+	font-weight: normal;
+	font-style: normal;
+}
+#content li {
+	margin-top: 10px;
+	font: 2.25em 'BebasNeueRegular';
+}
+#content li:before {
+	content: '\2254';
+	margin-right: 1%;
+}
+aside {
+	border-right-color: #e8e8e8;
+	border-right-style: solid;
+	border-right-width: 2px;
+	margin-top: 28px;
+	padding-left: 1.5%; 
+	padding-right: 1.0416667%; 
+	margin-left: 1.0416667%; 
+	float: left;
+	width: 20.7083333%; 
+	background: linear-gradient(90deg, #fff 0%, #e4e4e4 48.7%, #fff 100%);
+}
+aside h1 { 
+	margin-bottom: 20px; 
+	font-family: 'BebasNeueRegular'; 
+	font-size: 1.875em; /* 30px ÷ 16 */ 
+	text-transform: uppercase; 
+}
+.overHyped { 
+	margin-top: 27px; 
+}
+.sideBlock {
+	width: 100%; /* 220 */
+}
+.moreInfo {
+	padding: 5px 0px 5px 0px;
+	color: #5c5959;
+	text-shadow: 0px 1px 0px #fff;
+	display: block;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	font-size: 1em;
+	border-radius: 8px;
+	border: 1px solid #999;
+	background: linear-gradient(top, hsla(0,0%,1%,0.11) 0%,hsla(0,0%,10%,0.11) 12%,hsla(0,0%,22%,0.11) 24%,hsla(0,0%,38%,0.11) 39%,hsla(0,0%,62%,0.11) 59%,hsla(0,0%,84%,0.11) 78%,hsla(0,0%,94%,0.11) 90%,hsla(0,0%,100%,0.11) 100%);
+	transition: all 0.7s;
+}
+.moreInfo:nth-child(2) {
+	margin-left: 3%;
+}
+.moreInfo:hover {
+	cursor: pointer;
+	background: linear-gradient(top, hsla(0,0%,100%,0.11) 0%,hsla(0,0%,94%,0.11) 10%,hsla(0,0%,84%,0.11) 22%,hsla(0,0%,62%,0.11) 41%,hsla(0,0%,38%,0.11) 61%,hsla(0,0%,22%,0.11) 76%,hsla(0,0%,10%,0.11) 88%,hsla(0,0%,1%,0.11) 100%);
+	box-shadow: 0px 3px 4px #444;
+	
+}
+.-ms- .moreInfo {
+	background-repeat: repeat-x; 
+	background-image: url(../img/atwiNavBg.png); 
+}
+footer {
+	padding-bottom: 43px;
+	float: left;
+	margin-top: 20px;
+	padding-top: 33px;
+	background-position: 0 bottom;
+	background-repeat: repeat-x;
+	background-image: url(../img/buntingFWinvert.png);
+	margin-right: 1.0416667%; /* 10 ÷ 960 */
+	margin-left: 1.0416667%; /* 10 ÷ 960 */
+	clear: both;
+	width: 97.9166667%; /* 940 ÷ 960 */
+	border-top: 4px double #bfbfbf; 
+}
+footer p {
+	margin-bottom: 38px;
+	text-align: center;
+	font-size: 1.125em /* 18px ÷ 16px */;
+	font-family: 'BebasNeueRegular';
+	text-transform: uppercase;
+	color: #757474;
+}
+footer span a {
+	color: #bfbfbf;
+}
+.sideBlock a {
+	max-width: 47%;
+	text-decoration: none;
+	float: left;
+}
+.sideBlock img {
+	box-shadow: 0px 3px 5px #444;
+	margin-bottom: 5px;
+}
+
+.sideImage {
+	margin-left: 3%;
+}
+
+/* These styles use transforms and also keyframe animations (animations are defined below) to alter the look of the film posters in the sidebar */
+
+.unSung a:nth-child(odd) img {
+	transform: rotate(3deg);
+	animation: swing 0.1s 5 ease-in;
+}
+.unSung a:nth-child(even) img {
+	transform: rotate(-3deg);
+	animation: swing 0.1s 5 0.3s ease-in;
+}
+.overHyped a:nth-child(odd) img {
+	transform: rotate(3deg);
+	animation: swing 0.1s 5 0.2s ease-in;
+}
+.overHyped a:nth-child(even) img {
+	transform: rotate(-3deg);
+	animation: swing 0.1s 5 0.5s ease-in;
+}
+
+
+/* styles specific to Quiz page */
+.Qcontainer { 	
+  height: 100%;
+  width: 28%;
+  position: relative;
+  perspective: 200;
+  float: left;
+  margin-right: 2%;
+}
+.film {
+  width: 100%;
+  height: 15em;
+  transform-style: preserve-3d;
+  transition: 1s;
+}
+.Qcontainer:hover .film {
+	transform: rotateY(180deg);
+}
+.face {
+	position: absolute;
+	backface-visibility: hidden;
+}
+.back {
+  width: 73%;
+  height: 127%;
+  transform: rotateY(180deg);
+  background: #3b3b3b;
+  background: linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+  padding: 15%;
+}
+.note {
+	display: none;
+}
+.no-csstransforms3d .note {
+	display: block;
+}
+.front {
+	z-index: 5;
+}
+.Qcontainer:hover .front {
+	z-index: 0;
+}
+.back h5 {
+	font-size: 4em;
+	color: #f2050b;
+	text-align: center;
+	animation: warning 1.5s infinite ease-in;
+}
+#quiz #content {
+	min-height: 600px;
+}
+#quiz p.note {
+	font-size: 1em;
+}
+@keyframes warning {
+	0% {
+		text-shadow: 0px 0px 4px #000000;
+	}
+	50% {
+		text-shadow: 0 0 40px #000000;
+	}
+	100% {
+		text-shadow: 0 0 4px #000000;
+	}
+}
+@keyframes swing {
+	0% {
+		transform: rotate(3deg);
+	}
+	20% {
+		transform: rotate(7deg);
+	}
+	60% {
+		transform: rotate(10deg);
+	}
+	80% {
+		transform: rotate(7deg);
+	}
+	100% {
+		transform: rotate(3deg);
+	}
+}
+
+/* styles specific to redemption page */
+#redemption {
+	width: 100%;
+	font-family: 'ColaborateThinRegular';
+	font-weight: 400;
+}
+#redemption hgroup {
+	margin-bottom: 20px;
+}
+#redemption div {
+	width: 100%;
+	margin-bottom: 15px;
+	float: left;
+}
+#redemption span#range {
+	float: left;
+	font-size: 3em;
+	width: 100%;
+	color: red;
+	clear: both;
+	text-align: center;
+}
+#howYouRateThis,#yearOfCrime {
+	text-align: right;
+}
+#redemption legend {
+	font-style: italic;
+	color: #434242;
+	font-size: 0.8em;
+	margin-bottom: 20px;
+	float: left;
+	width: 100%;
+}
+#redemption fieldset {
+	border: 1px dotted #ccc;
+	padding: 2%;
+	margin-bottom: 20px;
+	background: #ffffff;
+	background: linear-gradient(top, #ffffff 77%,#f2f2f2 100%);
+	border-radius: 4px;
+	box-shadow: 2px 2px 5px hsla(0, 0%, 16.6667%, 0.3);
+}
+#redemption label {
+	width: 40%;
+	float: left;
+}
+input {
+	height: 20px;
+	font-size: 1em;
+	width: 40%;
+	float: right;
+}
+#redemption textarea {
+	height: 60px;
+	font-size: 1em;
+	width: 40%;
+	float: right;
+}
+#redemption input#submit {
+	text-decoration: none;
+	height: 34px;
+	font: 1.25em /* 36px ÷ 16 */ 'BebasNeueRegular';
+	background-color: #b01c20;
+	border-radius: 8px;
+	color: white;
+	float: right;
+	margin-bottom: 10px;
+	background: linear-gradient(top, rgb(241,92,96) 0%, rgb(176,28,32) 100%);
+	margin-top: 10px;
+	box-shadow: 5px 5px 5px hsla(0, 0%, 26.6667%, 0.8);
+	text-shadow: 0px 1px black;
+	border: 1px solid #bfbfbf;
+}
+.polyfill-important .input-range,.polyfill-important .step-controls {
+	float: right;
+}
+
+input:not([type="range"]), textarea, select {
+   border: 1px solid #bfbfbf;
+   padding: 0.2em;
+   font-size: 1.1em;
+   line-height: 1.2em;
+   background: #ffffff;
+   background: linear-gradient(top, #ffffff 0%,#ededed 8%,#ffffff 100%);
+   border-radius: 4px;
+   appearance: none;
+   box-shadow: 2px 2px 5px hsla(0, 0%, 16.6667%, 0.1);
+}
+/* styles for adding cross or tick to input form fields */
+input:required {
+	border: 1px solid rgba(253, 8, 8, 0.29);	
+}
+input:focus:invalid {
+	background: url('../img/cross.png') no-repeat right;
+	padding-right: 3px;
+}
+input:focus:valid {
+	background: url('../img/tick.png') no-repeat right;
+	padding-right: 3px;
+}
+
+/* Webkit (Chrome and Safari) make no allowance for polyfilled elements so we need to make them align left */
+
+.-webkit- input#howYouRateThis:focus:invalid,.-webkit- input#yearOfCrime:focus:invalid {
+	background: url('../img/cross.png') no-repeat left;
+	padding-right: 3px;
+}
+.-webkit- input#howYouRateThis:focus:valid,.-webkit- input#yearOfCrime:focus:valid {
+	background: url('../img/tick.png') no-repeat left;
+	padding-right: 3px;
+}
+
+/* transition everything - never recommended in the real world! */
+* {
+	transition: all 0.5s; 
+}
+
+/* Media Queries - I love you almost as much as a full English breakfast. Almost. */
+@media screen and (min-width: 300px) and (max-width: 400px) {
+	#logo {
+		font-size: 1.5em;
+	}
+}
+@media screen and (min-width: 300px) and (max-width: 600px) {
+	.Qcontainer {
+		width: 100%;
+		clear: left;
+	}
+	.film {
+		height: 28em;
+	}
+	#wrapper {
+		margin: 0px;
+		width: 100%;
+	}
+	#content li {
+		margin-top: 3px;
+		font: 1.25em 'BebasNeueRegular';
+	}
+	nav ul li {
+		margin: 0px;
+		font-size: 0.9em;
+		line-height: 0.8em;
+	}
+	nav ul li a {
+		margin: 0px;
+	}
+	nav ul li a:hover {
+		margin-left: 5%;
+		background-color: #d6d5d5;
+		padding-left: 2%;
+	}
+	#content h1 {
+		font-size: 3em;
+		text-shadow: 0 1px white, 2px 2px 0 #DAD7D7;
+	}
+	#content h2 {
+		font-size: 1.2em;
+	}
+	#content p {
+		font-size: 1.1em;
+		line-height: 1.3em;
+	}
+	#content a.button {
+		font-size: 1.2em;
+		width: 94%;
+		margin-top: 2%;
+		text-align: center;
+	}
+	img.oscarMain {
+		height: auto;
+		width: 19%;
+		margin-right: 1%;
+	}
+	#redemption input#submit {
+		font-size: 1em;
+	}
+}
+
+@media screen and (min-width: 475px) and (max-width: 600px) {
+	#content h1 {
+		font-size: 5em;
+		text-shadow: 0 1px white, 2px 2px 0 #DAD7D7;
+	}
+	#content h1 em {
+		font-size: 0.4em;
+		
+	}
+	#content h2 {
+		font-size: 2.5em;
+	}
+	#content p {
+		font-size: 1.25em;
+		line-height: 1.3em;
+	}
+	#content a.button {
+		font-size: 1.8em;
+		width: 94%;
+		margin-top: 2%;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	
+	nav {
+		display: block;
+		background: none;
+	}
+	nav ul {
+		 display: block;
+	}
+	nav ul li {
+		display: list-item;
+		color: red;
+		text-align: left;
+	}
+	nav ul li:first-child,nav ul li:last-child {
+		text-align: left;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#body {width: 96%; margin: 2%; padding: 0px; margin-bottom: 0px;
+	}	
+	#logo { text-align:center; }
+	
+	#content,aside { margin-top: 20px; width: 96%;margin: 2%;}
+	.oscarMain { margin-right: 30px; margin-top: 0px; width: 20%; height: 394px; }
+	aside { border-right: none; border-top: 2px solid #e8e8e8; padding-top: 20px; margin-bottom: 20px; }
+	.sideBlock { width: 96%; margin: 2%; }
+	.overHyped { margin-top: 0px; }
+	
+}
+@media screen and (min-width: 1000px) {
+	#content h1 {
+		font-size: 8em;
+	}
+	#content p {
+		font-size: 2.3em;
+		line-height: 1.2em;
+		margin-top: 1%;
+	}
+}
