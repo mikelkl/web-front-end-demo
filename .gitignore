@@ -5,8 +5,18 @@
 node_modules
 
 # Bower
+**/public/lib
+
+# Bower
 /项目构建与部署/Bower/bower_components/bootstrap/*
 /项目构建与部署/Bower/bower_components/d3/*
 /项目构建与部署/Bower/bower_components/jquery/*
 
 *.log
+
+# Angular
+learnFramework/Angular/angular-tour-of-heroes/src/**/*.js
+learnFramework/Angular/angular-tour-of-heroes/!src/systemjs.config.extras.js
+learnFramework/Angular/angular-tour-of-heroes/!src/systemjs.config.js
+learnFramework/Angular/angular-tour-of-heroes/!src/systemjs-angular-loader.js
+learnFramework/Angular/angular-tour-of-heroes/**/*.js.map
