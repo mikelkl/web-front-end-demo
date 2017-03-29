@@ -2,9 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Transitions</title>
+    <style>
+        /* Enter and leave animations can use different */
+        /* durations and timing functions.              */
+        .slide-fade-enter-active {
+            transition: all .3s ease;
+        }
+
+        .slide-fade-leave-active {
+            transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+
+        .slide-fade-enter, .slide-fade-leave-active {
+            padding-left: 10px;
+            opacity: 0;
+        }
+
+        .bounce-enter-active {
+            /*默认：animation-direction: normal 水平方向上运动*/
+            animation: bounce-in .5s;
+        }
+
+        .bounce-leave-active {
+            animation: bounce-out .5s;
+        }
+
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce-out {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+    </style>
 </head>
 <body>
-$END$
+<div id="example-1">
+    <button @click="show=!show">
+        Toggle render
+    </button>
+    <transition name="slide-fade">
+        <p v-if="show">hello</p>
+    </transition>
+</div>
+<div id="example-2">
+    <button @click="show=!show">
+        Toggle show
+    </button>
+    <transition name="bounce">
+        <p v-if="show">Look at me!</p>
+    </transition>
+</div>
+
+<script src="https://unpkg.com/vue@2.0.1/dist/vue.js"></script>
+<script>
+    // CSS Transitions
+    new Vue({
+        el: '#example-1',
+        data: {
+            show: true
+        }
+    });
+
+    // CSS Animations
+    new Vue({
+        el: '#example-2',
+        data: {
+            show: true
+        }
+    })
+</script>
 </body>
 </html>
