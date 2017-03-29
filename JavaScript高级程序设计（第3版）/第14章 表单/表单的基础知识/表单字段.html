@@ -2,9 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>表单字段</title>
 </head>
 <body>
-$END$
+<form method="post" id="myForm">
+    <input type="text" autofocus>
+    <button type="submit" name="submit-button">Submit</button>
+</form>
+
+<script src="../../EvenUtil.js"></script>
+<!--1. 共有的表单字段属性-->
+<script>
+    // 避免多次提交表单
+    var form = document.getElementById('myForm');
+    EventUtil.addHandler(form, 'submit', function (event) {
+        event = EventUtil.getEvent(event);
+        EventUtil.preventDefault(event);
+        var target = EventUtil.getTarget(event);
+
+        //取得提交按钮
+        var btn = target.elements['submit-button'];
+
+        //禁用它
+        btn.disabled = true;
+    })
+</script>
+
+<!--2. 共有的表单字段方法-->
+<script>
+    /*HTML5 为表单字段新增了一个autofocus 属性。在支持这个属性的浏览器中，只要设置这个属性，
+     不用JavaScript 就能自动把焦点移动到相应字段。
+     为了保证前面的代码在设置autofocus 的浏览器中正常运行，必须先检测是否设置了该属性，如
+     果设置了，就不用再调用focus()了。
+     */
+    EventUtil.addHandler(window, 'load', function (event) {
+        var element = document.forms[0].elements[0];
+        if (element.autofocus !== true) {
+            element.focus();
+            console.log('JS focus');
+        }
+    })
+</script>
+
+<!--3. 共有的表单字段事件-->
+<script>
+    /*通常，可以使用focus 和blur 事件来以某种方式改变用户界面，要么是向用户给出视觉提示，要
+     么是向界面中添加额外的功能（例如，为文本框显示一个下拉选项菜单）。而change 事件则经常用于
+     验证用户在字段中输入的数据。例如，假设有一个文本框，我们只允许用户输入数值。此时，可以利用
+     focus 事件修改文本框的背景颜色，以便更清楚地表明这个字段获得了焦点。可以利用blur 事件恢复
+     文本框的背景颜色，利用change 事件在用户输入了非数值字符时再次修改背景颜色*/
+    var textbox = document.forms[0].elements[0];
+
+    EventUtil.addHandler(textbox, 'focus', function (event) {
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+        if (target.style.backgroundColor != "red") {
+            target.style.backgroundColor = "yellow";
+        }
+    });
+    EventUtil.addHandler(textbox, 'blur', function (event) {
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+        if (/[^\d]/.test(target.value)) {
+            target.style.backgroundColor = "red";
+        } else {
+            target.style.backgroundColor = "";
+        }
+    });
+    EventUtil.addHandler(textbox, 'change', function (event) {
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+        if (/[^\d]/.test(target.value)) {
+            target.style.backgroundColor = "red";
+        } else {
+            target.style.backgroundColor = "";
+        }
+    });
+</script>
 </body>
 </html>
