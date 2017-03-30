@@ -16,6 +16,11 @@ Angular2与AngularJS1.x相差很大，几乎等同于完全重构，并且目前
 
 [【AngularJS】进阶- Directive 的使用](https://github.com/mikelkl/web-front-end-demo/blob/master/AngularJS/AngularJS%20%E8%BF%9B%E9%98%B6-%20Directive%20%E7%9A%84%E4%BD%BF%E7%94%A8/%E3%80%90AngularJS%E3%80%91%E8%BF%9B%E9%98%B6-%20Directive%20%E7%9A%84%E4%BD%BF%E7%94%A8.md)
 
+
+#### Angular
+[【Angular】Angular + Electron构建Desktop App ](https://github.com/mikelkl/web-front-end-demo/blob/master/learnFramework/Angular/angular-tour-of-heroes/Angular%2BElectron.md)
+
+
 #### ReactJS
 [【ReactJS】React 概述](https://github.com/mikelkl/web-front-end-demo/blob/master/ReactJS/React%20%E6%A6%82%E8%BF%B0/%E3%80%90ReactJS%E3%80%91React%20%E6%A6%82%E8%BF%B0.md)
 

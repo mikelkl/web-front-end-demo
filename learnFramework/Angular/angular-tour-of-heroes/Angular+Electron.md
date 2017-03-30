@@ -83,7 +83,7 @@ app.on('activate', function () {
 
 ```
 
-3.修改main.js
+3.修改main.js  
 修改load the index.html of the app路径为：
 ```JavaScript
 pathname: path.join(__dirname, 'src/index.html'),
